@@ -8,5 +8,7 @@ namespace Repositories.BaseRepository
 {
     internal class BaseRepository
     {
+        // test
+
     }
 }
