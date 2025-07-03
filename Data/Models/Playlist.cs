@@ -5,23 +5,19 @@ namespace Data.Models;
 
 public partial class Playlist
 {
-    public int Id { get; set; }
-
-    public int AuthorId { get; set; }
-
     public int PlaylistId { get; set; }
 
-    public string Picture { get; set; } = null!;
+    public string Title { get; set; } = null!;
 
-    public string Name { get; set; } = null!;
+    public int MakeBy { get; set; }
 
-    public int SongId { get; set; }
+    public DateTime MakeDate { get; set; }
 
-    public bool Public { get; set; }
+    public string? PicturePlaylistUrl { get; set; }
 
-    public virtual User Author { get; set; } = null!;
+    public virtual ICollection<LikePlaylist> LikePlaylists { get; set; } = new List<LikePlaylist>();
 
-    public virtual Song Song { get; set; } = null!;
+    public virtual User MakeByNavigation { get; set; } = null!;
 
-    public virtual ICollection<UserPlaylist> UserPlaylists { get; set; } = new List<UserPlaylist>();
+    public virtual ICollection<PlaylistTrack> PlaylistTracks { get; set; } = new List<PlaylistTrack>();
 }

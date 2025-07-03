@@ -5,15 +5,21 @@ namespace Data.Models;
 
 public partial class Notification
 {
-    public int Id { get; set; }
+    public int NotificationId { get; set; }
+
+    public string Title { get; set; } = null!;
 
     public string Content { get; set; } = null!;
 
-    public int UserId { get; set; }
-
     public bool IsRead { get; set; }
 
-    public DateOnly CreatedAt { get; set; }
+    public DateTime CreateAt { get; set; }
 
-    public virtual User User { get; set; } = null!;
+    public int RecipienId { get; set; }
+
+    public int? ActorId { get; set; }
+
+    public virtual User? Actor { get; set; }
+
+    public virtual User Recipien { get; set; } = null!;
 }

@@ -5,21 +5,23 @@ namespace Data.Models;
 
 public partial class Comment
 {
-    public int Id { get; set; }
+    public int CommentId { get; set; }
 
-    public int UserId { get; set; }
+    public int WriteBy { get; set; }
 
-    public int SongId { get; set; }
+    public DateTime WriteDate { get; set; }
 
-    public TimeOnly Time { get; set; }
+    public int TrackId { get; set; }
+
+    public int? ParentCommentId { get; set; }
 
     public string Content { get; set; } = null!;
 
-    public int? FatherCommentId { get; set; }
+    public virtual ICollection<Comment> InverseParentComment { get; set; } = new List<Comment>();
 
-    public int NumLike { get; set; }
+    public virtual Comment? ParentComment { get; set; }
 
-    public virtual Song Song { get; set; } = null!;
+    public virtual Track Track { get; set; } = null!;
 
-    public virtual User User { get; set; } = null!;
+    public virtual User WriteByNavigation { get; set; } = null!;
 }
