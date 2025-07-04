@@ -32,4 +32,6 @@ public partial class Track
     public virtual ICollection<LikeTrack> LikeTracks { get; set; } = new List<LikeTrack>();
 
     public virtual ICollection<PlaylistTrack> PlaylistTracks { get; set; } = new List<PlaylistTrack>();
+
+    public virtual User UpdateByNavigation { get; set; } = null!;
 }

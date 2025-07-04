@@ -37,6 +37,8 @@ public partial class User
 
     public virtual ICollection<Follow> FollowFollowers { get; set; } = new List<Follow>();
 
+    public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
+
     public virtual ICollection<LikePlaylist> LikePlaylists { get; set; } = new List<LikePlaylist>();
 
     public virtual ICollection<LikeTrack> LikeTracks { get; set; } = new List<LikeTrack>();
@@ -50,4 +52,6 @@ public partial class User
     public virtual Role Role { get; set; } = null!;
 
     public virtual ICollection<SystemReport> SystemReports { get; set; } = new List<SystemReport>();
+
+    public virtual ICollection<Track> Tracks { get; set; } = new List<Track>();
 }

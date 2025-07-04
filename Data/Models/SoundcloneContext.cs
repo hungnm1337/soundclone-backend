@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Data.Models;
 
@@ -41,20 +42,24 @@ public partial class SoundcloneContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=localhost;Database=Soundclone;User Id=sa;Password=123;Encrypt=False;TrustServerCertificate=True");
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        var builder = new ConfigurationBuilder();
+        builder.SetBasePath(Directory.GetCurrentDirectory());
+        builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+        var configuration = builder.Build();
+        optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity.HasKey(e => e.CommentId).HasName("PK__Comments__E7957687CA92A4D4");
+            entity.HasKey(e => e.CommentId).HasName("PK__Comments__E7957687EA239FA6");
 
             entity.Property(e => e.CommentId).HasColumnName("comment_id");
             entity.Property(e => e.Content)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("content");
             entity.Property(e => e.ParentCommentId).HasColumnName("parent_comment_id");
             entity.Property(e => e.TrackId).HasColumnName("track_id");
@@ -65,22 +70,22 @@ public partial class SoundcloneContext : DbContext
 
             entity.HasOne(d => d.ParentComment).WithMany(p => p.InverseParentComment)
                 .HasForeignKey(d => d.ParentCommentId)
-                .HasConstraintName("FK__Comments__parent__5DCAEF64");
+                .HasConstraintName("FK_Comments_Parent");
 
             entity.HasOne(d => d.Track).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.TrackId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comments__track___5CD6CB2B");
+                .HasConstraintName("FK_Comments_Tracks");
 
             entity.HasOne(d => d.WriteByNavigation).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.WriteBy)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comments__write___5EBF139D");
+                .HasConstraintName("FK_Comments_Users");
         });
 
         modelBuilder.Entity<Follow>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Follows__3213E83FDC62D6AE");
+            entity.HasKey(e => e.Id).HasName("PK__Follows__3213E83F7F2DA566");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ArtistId).HasColumnName("artist_id");
@@ -89,17 +94,17 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.Artist).WithMany(p => p.FollowArtists)
                 .HasForeignKey(d => d.ArtistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Follows__artist___534D60F1");
+                .HasConstraintName("FK_Follows_Artist");
 
             entity.HasOne(d => d.Follower).WithMany(p => p.FollowFollowers)
                 .HasForeignKey(d => d.FollowerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Follows__followe__5441852A");
+                .HasConstraintName("FK_Follows_Follower");
         });
 
         modelBuilder.Entity<Invoice>(entity =>
         {
-            entity.HasKey(e => e.InvoiceId).HasName("PK__Invoices__F58DFD49AA72399D");
+            entity.HasKey(e => e.InvoiceId).HasName("PK__Invoices__F58DFD4907B2EFDD");
 
             entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
             entity.Property(e => e.Date)
@@ -114,12 +119,17 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.Service).WithMany(p => p.Invoices)
                 .HasForeignKey(d => d.ServiceId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Invoices__servic__4F7CD00D");
+                .HasConstraintName("FK_Invoices_Services");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Invoices)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Invoices_Users");
         });
 
         modelBuilder.Entity<LikePlaylist>(entity =>
         {
-            entity.HasKey(e => e.LikePlaylistId).HasName("PK__LikePlay__23AB7E9BAC90D998");
+            entity.HasKey(e => e.LikePlaylistId).HasName("PK__LikePlay__23AB7E9BC00BE761");
 
             entity.Property(e => e.LikePlaylistId).HasColumnName("like_playlist_id");
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
@@ -128,17 +138,17 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.Playlist).WithMany(p => p.LikePlaylists)
                 .HasForeignKey(d => d.PlaylistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LikePlayl__playl__5BE2A6F2");
+                .HasConstraintName("FK_LikePlaylists_Playlists");
 
             entity.HasOne(d => d.User).WithMany(p => p.LikePlaylists)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LikePlayl__user___59063A47");
+                .HasConstraintName("FK_LikePlaylists_Users");
         });
 
         modelBuilder.Entity<LikeTrack>(entity =>
         {
-            entity.HasKey(e => e.LikeTrackId).HasName("PK__LikeTrac__C25CFAA738BD781F");
+            entity.HasKey(e => e.LikeTrackId).HasName("PK__LikeTrac__C25CFAA759CAA246");
 
             entity.Property(e => e.LikeTrackId).HasColumnName("like_track_id");
             entity.Property(e => e.TrackId).HasColumnName("track_id");
@@ -147,23 +157,22 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.Track).WithMany(p => p.LikeTracks)
                 .HasForeignKey(d => d.TrackId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LikeTrack__track__5AEE82B9");
+                .HasConstraintName("FK_LikeTracks_Tracks");
 
             entity.HasOne(d => d.User).WithMany(p => p.LikeTracks)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LikeTrack__user___59FA5E80");
+                .HasConstraintName("FK_LikeTracks_Users");
         });
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842F9D8D1E30");
+            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842FEB61BD7D");
 
             entity.Property(e => e.NotificationId).HasColumnName("notification_id");
             entity.Property(e => e.ActorId).HasColumnName("actor_id");
             entity.Property(e => e.Content)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("content");
             entity.Property(e => e.CreateAt)
                 .HasColumnType("datetime")
@@ -172,22 +181,21 @@ public partial class SoundcloneContext : DbContext
             entity.Property(e => e.RecipienId).HasColumnName("recipien_id");
             entity.Property(e => e.Title)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("title");
 
             entity.HasOne(d => d.Actor).WithMany(p => p.NotificationActors)
                 .HasForeignKey(d => d.ActorId)
-                .HasConstraintName("FK__Notificat__actor__52593CB8");
+                .HasConstraintName("FK_Notifications_Actor");
 
             entity.HasOne(d => d.Recipien).WithMany(p => p.NotificationRecipiens)
                 .HasForeignKey(d => d.RecipienId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Notificat__recip__5165187F");
+                .HasConstraintName("FK_Notifications_Recipient");
         });
 
         modelBuilder.Entity<Playlist>(entity =>
         {
-            entity.HasKey(e => e.PlaylistId).HasName("PK__Playlist__FB9C14100D3B0C73");
+            entity.HasKey(e => e.PlaylistId).HasName("PK__Playlist__FB9C1410280ABA50");
 
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
             entity.Property(e => e.MakeBy).HasColumnName("make_by");
@@ -196,22 +204,20 @@ public partial class SoundcloneContext : DbContext
                 .HasColumnName("make_date");
             entity.Property(e => e.PicturePlaylistUrl)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("picture_playlist_url");
             entity.Property(e => e.Title)
                 .HasMaxLength(255)
-                .IsUnicode(false)
                 .HasColumnName("title");
 
             entity.HasOne(d => d.MakeByNavigation).WithMany(p => p.Playlists)
                 .HasForeignKey(d => d.MakeBy)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Playlists__make___5629CD9C");
+                .HasConstraintName("FK_Playlists_Users");
         });
 
         modelBuilder.Entity<PlaylistTrack>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Playlist__3213E83F1CF58DF5");
+            entity.HasKey(e => e.Id).HasName("PK__Playlist__3213E83F7A64EDD4");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
@@ -220,38 +226,35 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.Playlist).WithMany(p => p.PlaylistTracks)
                 .HasForeignKey(d => d.PlaylistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PlaylistT__playl__571DF1D5");
+                .HasConstraintName("FK_PlaylistTracks_Playlists");
 
             entity.HasOne(d => d.Track).WithMany(p => p.PlaylistTracks)
                 .HasForeignKey(d => d.TrackId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PlaylistT__track__5812160E");
+                .HasConstraintName("FK_PlaylistTracks_Tracks");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Roles__760965CC1E4ECC45");
+            entity.HasKey(e => e.RoleId).HasName("PK__Roles__760965CCCC573E9E");
 
             entity.Property(e => e.RoleId).HasColumnName("role_id");
             entity.Property(e => e.RoleDescription).HasColumnName("role_description");
             entity.Property(e => e.RoleName)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("role_name");
         });
 
         modelBuilder.Entity<Service>(entity =>
         {
-            entity.HasKey(e => e.ServiceId).HasName("PK__Services__3E0DB8AFD27D551C");
+            entity.HasKey(e => e.ServiceId).HasName("PK__Services__3E0DB8AF195D3BB2");
 
             entity.Property(e => e.ServiceId).HasColumnName("service_id");
             entity.Property(e => e.Description)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("description");
             entity.Property(e => e.Name)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("name");
             entity.Property(e => e.OldPrice)
                 .HasColumnType("decimal(18, 2)")
@@ -263,16 +266,14 @@ public partial class SoundcloneContext : DbContext
 
         modelBuilder.Entity<SystemReport>(entity =>
         {
-            entity.HasKey(e => e.SystemReportId).HasName("PK__SystemRe__668F938B42F4138F");
+            entity.HasKey(e => e.SystemReportId).HasName("PK__SystemRe__668F938B69F7A9E4");
 
             entity.Property(e => e.SystemReportId).HasColumnName("system_report_id");
             entity.Property(e => e.Content)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("content");
             entity.Property(e => e.ReplyContent)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("reply_content");
             entity.Property(e => e.ReplyDate)
                 .HasColumnType("datetime")
@@ -285,32 +286,28 @@ public partial class SoundcloneContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.SystemReports)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SystemRep__user___5070F446");
+                .HasConstraintName("FK_SystemReports_Users");
         });
 
         modelBuilder.Entity<Track>(entity =>
         {
-            entity.HasKey(e => e.TrackId).HasName("PK__Tracks__24ECC82E3B722E9F");
+            entity.HasKey(e => e.TrackId).HasName("PK__Tracks__24ECC82EB4CD4B2A");
 
             entity.Property(e => e.TrackId).HasColumnName("track_id");
             entity.Property(e => e.AudioFileUrl)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("audio_file_url");
             entity.Property(e => e.CoverArtUrl)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("cover_art_url");
             entity.Property(e => e.Description)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("description");
             entity.Property(e => e.DurationInSeconds).HasColumnName("duration_in_seconds");
             entity.Property(e => e.IsPublic).HasColumnName("is_public");
             entity.Property(e => e.PlayCount).HasColumnName("play_count");
             entity.Property(e => e.Title)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("title");
             entity.Property(e => e.UpdateBy).HasColumnName("update_by");
             entity.Property(e => e.UploadDate)
@@ -318,24 +315,25 @@ public partial class SoundcloneContext : DbContext
                 .HasColumnName("upload_date");
             entity.Property(e => e.WaveformUrl)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("waveform_url");
+
+            entity.HasOne(d => d.UpdateByNavigation).WithMany(p => p.Tracks)
+                .HasForeignKey(d => d.UpdateBy)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Tracks_Users");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370F7ACC61DE");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370F3633A4C2");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__AB6E6164E343084B").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__AB6E61641B9BDFBE").IsUnique();
 
-            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC572FEE4F907").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC572E07BA08A").IsUnique();
 
-            entity.Property(e => e.UserId)
-                .ValueGeneratedNever()
-                .HasColumnName("user_id");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.Bio)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("bio");
             entity.Property(e => e.CreateAt)
                 .HasColumnType("datetime")
@@ -343,41 +341,34 @@ public partial class SoundcloneContext : DbContext
             entity.Property(e => e.DayOfBirth).HasColumnName("day_of_birth");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
-                .IsUnicode(false)
                 .HasColumnName("email");
             entity.Property(e => e.HashedPassword)
                 .HasMaxLength(255)
-                .IsUnicode(false)
                 .HasColumnName("hashed_password");
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
-                .IsUnicode(false)
                 .HasColumnName("name");
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(11)
-                .IsUnicode(false)
                 .HasColumnName("phone_number");
             entity.Property(e => e.ProfilePictureUrl)
                 .HasMaxLength(2048)
-                .IsUnicode(false)
                 .HasColumnName("profile_picture_url");
             entity.Property(e => e.RoleId).HasColumnName("role_id");
             entity.Property(e => e.Status)
                 .HasMaxLength(225)
-                .IsUnicode(false)
                 .HasColumnName("status");
             entity.Property(e => e.UpdateAt)
                 .HasColumnType("datetime")
                 .HasColumnName("update_at");
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
-                .IsUnicode(false)
                 .HasColumnName("username");
 
             entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.RoleId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Users__role_id__5535A963");
+                .HasConstraintName("FK_Users_Roles");
         });
 
         OnModelCreatingPartial(modelBuilder);

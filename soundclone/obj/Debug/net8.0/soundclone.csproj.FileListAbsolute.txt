@@ -183,3 +183,4 @@ C:\Users\User\OneDrive\Desktop\SoundClone_Ver2.0\soundclone-backend\soundclone\b
 C:\Users\User\OneDrive\Desktop\SoundClone_Ver2.0\soundclone-backend\soundclone\bin\Debug\net8.0\Services.pdb
 C:\Users\User\OneDrive\Desktop\SoundClone_Ver2.0\soundclone-backend\soundclone\bin\Debug\net8.0\Data.pdb
 C:\Users\User\OneDrive\Desktop\SoundClone_Ver2.0\soundclone-backend\soundclone\bin\Debug\net8.0\Repositories.pdb
+C:\Users\User\OneDrive\Desktop\SoundClone_Ver2.0\soundclone-backend\soundclone\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

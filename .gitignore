@@ -1,0 +1,65 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+[Tt]humbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Others
+*.log
+*.vspscc
+*.vssscc
+*.pdb
+*.cache
+*.dbmdl
+*.bak
+*.swp
+*.tmp
+*.local.json
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# Publish
+publish/
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper 
