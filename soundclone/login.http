@@ -1,0 +1,25 @@
+### Login API Tests
+
+### 1. User Login
+POST {{baseUrl}}/api/Login/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### 2. Validate Token
+GET {{baseUrl}}/api/Login/validate-token
+Authorization: Bearer {{token}}
+
+### 3. Refresh Token
+POST {{baseUrl}}/api/Login/refresh-token
+Content-Type: application/json
+
+"{{refreshToken}}"
+
+### Variables (set these in your environment)
+# @baseUrl = https://localhost:7001
+# @token = your_jwt_token_here
+# @refreshToken = your_refresh_token_here 
