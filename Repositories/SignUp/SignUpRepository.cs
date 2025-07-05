@@ -68,5 +68,44 @@ namespace Repositories.SignUp
                 return builder.ToString();
             }
         }
+
+        public async Task<bool> checkEmail(string email)
+        {
+            var userHaveEmail = await _soundcloneContext.Users.Where(x => x.Email.Equals(email)).FirstOrDefaultAsync();
+            if (userHaveEmail != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> checkPhoneNumber(string phoneNumber)
+        {
+            var userHavePhonenumber = await _soundcloneContext.Users.Where(x => x.PhoneNumber.Equals(phoneNumber)).FirstOrDefaultAsync();
+            if (userHavePhonenumber != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> checkUsername(string username)
+        {
+            var userHaveUsername = await _soundcloneContext.Users.Where(x => x.Username.Equals(username)).FirstOrDefaultAsync();
+            if (userHaveUsername != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

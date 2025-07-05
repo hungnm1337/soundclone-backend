@@ -17,6 +17,21 @@ namespace Services.SignUp
             _repository = repository;
         }
 
+        public async Task<bool> checkEmail(string email)
+        {
+            return await _repository.checkEmail(email);
+        }
+
+        public async Task<bool> checkPhoneNumber(string phoneNumber)
+        {
+            return await _repository.checkPhoneNumber(phoneNumber);
+        }
+
+        public async Task<bool> checkUsername(string username)
+        {
+            return await _repository.checkUsername(username);
+        }
+
         public async Task<SignUpDTO> Register(SignUpDTO model)
         {
             return await _repository.Register(model);

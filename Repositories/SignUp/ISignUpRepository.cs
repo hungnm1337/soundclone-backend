@@ -10,5 +10,11 @@ namespace Repositories.SignUp
     public interface ISignUpRepository
     {
         public Task<SignUpDTO> Register(SignUpDTO model);
+
+        public Task<bool> checkEmail(string email);
+
+        public Task<bool> checkPhoneNumber(string phoneNumber);
+
+        public Task<bool> checkUsername( string username);  
     }
 }

@@ -17,7 +17,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<SignUpDTO>> Register([FromBody] SignUpDTO model)
+        public async Task<ActionResult> Register([FromBody] SignUpDTO model)
         {
             try
             {
@@ -40,6 +40,23 @@ namespace soundclone.Controllers
                     return BadRequest("Email, Username, and Password are required");
                 }
 
+                bool isEmailExisted = await _signUpService.checkEmail(model.Email);
+                if (isEmailExisted) 
+                {
+                    return BadRequest("Email existed, try another email.");
+                }
+                bool isUsernameExisted = await _signUpService.checkUsername(model.Username);
+                if (isUsernameExisted)
+                {
+                    return BadRequest("Username existed, try another username.");
+                }
+                bool isPhonenumberExisted = await _signUpService.checkPhoneNumber(model.PhoneNumber);
+                if (isPhonenumberExisted)
+                {
+                    return BadRequest("Phone number existed, try anothe phone number.");
+                }
+
+
                 var modelSignUp = await _signUpService.Register(model);
 
                 if (modelSignUp == null)
@@ -47,7 +64,7 @@ namespace soundclone.Controllers
                     return BadRequest("Registration failed. Please check your information and try again.");
                 }
 
-                return Ok(modelSignUp);
+                return Ok("Register successfully");
             }
             catch (Exception ex)
             {
