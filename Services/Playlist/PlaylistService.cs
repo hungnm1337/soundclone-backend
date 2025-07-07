@@ -1,0 +1,34 @@
+﻿using Data.DTOs;
+using Repositories.Playlist;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Services.Playlist
+{
+    public class PlaylistService : IPlaylistService
+    {
+        private readonly IPlaylistRepository _playlistRepository;
+        public PlaylistService(IPlaylistRepository playlistRepository) {
+        
+            _playlistRepository = playlistRepository;
+        }
+
+        public async Task<PlaylistDTO> CreateNewPlaylist(PlaylistDTO playlist)
+        {
+            return await _playlistRepository.CreateNewPlaylist(playlist);
+        }
+
+        public async Task<IEnumerable<Data.Models.Playlist>> GetPlaylistByUserId(int userId)
+        {
+            return await _playlistRepository.GetPlaylistByUserId(userId);
+        }
+
+        public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
+        {
+            return await _playlistRepository.UpdatePlaylist(playlist);
+        }
+    }
+}

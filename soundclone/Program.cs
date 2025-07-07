@@ -9,6 +9,8 @@ using Services.Login;
 using Services.JWT;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Repositories.Playlist;
+using Services.Playlist;
 
 namespace soundclone
 {
@@ -35,6 +37,8 @@ namespace soundclone
             builder.Services.AddScoped<ISignUpRepository, SignUpRepository>();
             builder.Services.AddScoped<ISignUpService, SignUpService>();
             
+            builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
+            builder.Services.AddScoped<IPlaylistService, PlaylistService>();
             // Add Login services
             builder.Services.AddScoped<ILoginRepository, LoginRepository>();
             builder.Services.AddScoped<ILoginService, LoginService>();
