@@ -17,6 +17,11 @@ namespace Services.Playlist
             _playlistRepository = playlistRepository;
         }
 
+        public async Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model)
+        {
+            return await _playlistRepository.ChangeStatusPublicOfPlaylist(model);
+        }
+
         public async Task<PlaylistDTO> CreateNewPlaylist(PlaylistDTO playlist)
         {
             return await _playlistRepository.CreateNewPlaylist(playlist);
@@ -26,7 +31,7 @@ namespace Services.Playlist
         {
             return await _playlistRepository.GetPlaylistByUserId(userId);
         }
-
+        
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
         {
             return await _playlistRepository.UpdatePlaylist(playlist);

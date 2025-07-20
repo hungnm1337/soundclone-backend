@@ -42,6 +42,11 @@ public partial class SoundcloneContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public async Task<User> FindAsync(int userId)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var builder = new ConfigurationBuilder();

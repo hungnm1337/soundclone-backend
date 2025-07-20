@@ -1,6 +1,7 @@
 ﻿using Data.DTOs;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,29 @@ namespace Repositories.Playlist
         {
             _soundcloneContext = soundcloneContext;
         }
+
+        public async Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model)
+        {
+            try
+            {
+                Data.Models.Playlist playlist = await _soundcloneContext.Playlists.FindAsync(model.PlaylistId);
+                if (playlist == null || playlist.MakeBy != model.MakeBy)
+                {
+                    return false;
+                }
+                
+                playlist.IsPublish = !playlist.IsPublish;
+                _soundcloneContext.Playlists.Update(playlist);
+                await _soundcloneContext.SaveChangesAsync();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public async Task<PlaylistDTO> CreateNewPlaylist(PlaylistDTO playlist)
         {
             try
@@ -39,7 +63,9 @@ namespace Repositories.Playlist
                     Title = playlist.Title,
                     MakeBy = playlist.MakeBy,
                     MakeDate = DateTime.Now,
-                    PicturePlaylistUrl = playlist.PicturePlaylistUrl
+                    PicturePlaylistUrl = playlist.PicturePlaylistUrl,
+                    IsPublish = playlist.IsPublish,
+                    
                 };
 
                 _soundcloneContext.Playlists.Add(newPlayList);

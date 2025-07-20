@@ -15,7 +15,7 @@ namespace soundclone.Controllers
         {
             _playlistService = playlistService;
         }
-        [HttpGet]
+        [HttpGet("getplaylist/{userId:int}")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> GetPlaylistsByUserId(int userId)
         {
@@ -36,7 +36,7 @@ namespace soundclone.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> CreateNewPlaylist([FromBody] PlaylistDTO playlist)
         {
@@ -55,7 +55,7 @@ namespace soundclone.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("update-playlist")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> UpdatePlaylist([FromBody] UpdatePlaylistDTO playlist)
         {
@@ -73,5 +73,29 @@ namespace soundclone.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPut("status-change")]
+        [Authorize(Roles = "5")]
+        public async Task<IActionResult> ChangeStatusPublishOfPlaylist([FromBody] ChangeStatusPlaylistDTO model)
+        {
+            try
+            {
+                bool resultOfChange = await _playlistService.ChangeStatusPublicOfPlaylist(model);
+                if (resultOfChange)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

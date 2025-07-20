@@ -13,6 +13,8 @@ namespace Data.DTOs
         public int MakeBy { get; set; }
 
         public string? PicturePlaylistUrl { get; set; }
+
+        public bool IsPublish {  get; set; }
     }
 
     public class UpdatePlaylistDTO
@@ -20,8 +22,6 @@ namespace Data.DTOs
         public int PlaylistId { get; set; }
 
         public string Title { get; set; } = null!;
-
-
 
         public string? PicturePlaylistUrl { get; set; }
     }
@@ -37,6 +37,22 @@ namespace Data.DTOs
         public DateTime MakeDate { get; set; }
 
         public string? PicturePlaylistUrl { get; set; }
+    }
+
+    public class ChangeStatusPlaylistDTO 
+    {
+        public int PlaylistId { get; set; }
+
+        public int MakeBy { get; set; }
+    }
+
+    public class LikePlaylistDTO
+    {
+        public int? LikePlaylistId { get; set; }
+
+        public int UserId { get; set; }
+
+        public int PlaylistId { get; set; }
     }
 
 }

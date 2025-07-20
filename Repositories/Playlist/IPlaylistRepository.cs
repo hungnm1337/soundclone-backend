@@ -14,5 +14,8 @@ namespace Repositories.Playlist
         Task<PlaylistDTO> CreateNewPlaylist(PlaylistDTO playlist);
 
         Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist);
+
+        Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model);
+
     }
 }
