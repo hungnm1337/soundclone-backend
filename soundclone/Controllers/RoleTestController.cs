@@ -17,20 +17,20 @@ namespace soundclone.Controllers
             return Ok(new { message = "This is a public endpoint. Anyone can access it." });
         }
 
-        // 2. Endpoint for role id = 1
-        [HttpGet("role1")]
-        [Authorize(Roles = "1")]
-        public IActionResult Role1Endpoint()
+        // 2. Endpoint for role id = 5
+        [HttpGet("role5")]
+        [Authorize(Roles = "5")]
+        public IActionResult Role5Endpoint()
         {
-            return Ok(new { message = "This endpoint is only for users with role id = 1." });
+            return Ok(new { message = "This endpoint is only for users with role id = 5." });
         }
 
-        // 3. Endpoint for role id = 2
-        [HttpGet("role2")]
-        [Authorize(Roles = "2")]
-        public IActionResult Role2Endpoint()
+        // 3. Endpoint for role id = 6
+        [HttpGet("role6")]
+        [Authorize(Roles = "6")]
+        public IActionResult Role6Endpoint()
         {
-            return Ok(new { message = "This endpoint is only for users with role id = 2." });
+            return Ok(new { message = "This endpoint is only for users with role id = 6." });
         }
     }
 } 

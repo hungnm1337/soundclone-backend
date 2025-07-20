@@ -13,7 +13,7 @@ namespace Repositories.BaseRepository
         protected readonly SoundcloneContext _soundcloneContext;
         private readonly DbSet<T> _dbSet;
 
-        public BaseRepository( SoundcloneContext soundcloneContext)
+        public BaseRepository(SoundcloneContext soundcloneContext)
         {
             _soundcloneContext = soundcloneContext;
             _dbSet = soundcloneContext.Set<T>();

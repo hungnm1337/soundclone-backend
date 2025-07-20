@@ -25,8 +25,8 @@ namespace Repositories.Login
                 // Find user by username and password
                 var user = await _soundcloneContext.Users
                     .Include(u => u.Role)
-                    .FirstOrDefaultAsync(u => 
-                        u.Username == loginDTO.Username && 
+                    .FirstOrDefaultAsync(u =>
+                        u.Username == loginDTO.Username &&
                         u.HashedPassword == hashedPassword &&
                         u.Status == "ACTIVE");
 
@@ -40,6 +40,7 @@ namespace Repositories.Login
                     Email = user.Email,
                     Username = user.Username,
                     RoleId = user.Role?.RoleId ?? 0,
+                    Avt = user.ProfilePictureUrl ?? ""
                 };
             }
             catch (Exception)
@@ -60,7 +61,7 @@ namespace Repositories.Login
                 // In a real application, you might want to create a separate table for refresh tokens
                 user.UpdateAt = DateTime.Now;
                 // You can add a RefreshToken field to User model if needed
-                
+
                 await _soundcloneContext.SaveChangesAsync();
                 return true;
             }
@@ -99,4 +100,4 @@ namespace Repositories.Login
             }
         }
     }
-} 
+}

@@ -15,6 +15,8 @@ public partial class Playlist
 
     public string? PicturePlaylistUrl { get; set; }
 
+    public bool IsPublish { get; set; }
+
     public virtual ICollection<LikePlaylist> LikePlaylists { get; set; } = new List<LikePlaylist>();
 
     public virtual User MakeByNavigation { get; set; } = null!;

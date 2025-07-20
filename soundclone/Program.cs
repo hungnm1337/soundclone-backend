@@ -11,6 +11,10 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using Repositories.Playlist;
 using Services.Playlist;
+using Repositories.Track;
+using Services.Track;
+using Microsoft.Extensions.Configuration;
+using Services.Upload;
 
 namespace soundclone
 {
@@ -36,13 +40,16 @@ namespace soundclone
             // Add services to the container.
             builder.Services.AddScoped<ISignUpRepository, SignUpRepository>();
             builder.Services.AddScoped<ISignUpService, SignUpService>();
-            
+
             builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
             builder.Services.AddScoped<IPlaylistService, PlaylistService>();
             // Add Login services
             builder.Services.AddScoped<ILoginRepository, LoginRepository>();
             builder.Services.AddScoped<ILoginService, LoginService>();
             builder.Services.AddScoped<IJWTService, JWTService>();
+            builder.Services.AddScoped<ITrackRepository, TrackRepository>();
+            builder.Services.AddScoped<ITrackService, TrackService>();
+            builder.Services.AddScoped<IUploadService, UploadService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -75,25 +82,33 @@ namespace soundclone
                 });
             });
 
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("User", policy =>
+                    policy.RequireRole("5"));
+                options.AddPolicy("Admin", policy =>
+                    policy.RequireRole("6"));
+            });
+
             var jwtSettings = builder.Configuration.GetSection("JWT");
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings["Issuer"] ?? "SoundClone",
-                    ValidAudience = jwtSettings["Audience"] ?? "SoundCloneUsers",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"] ?? "YourSuperSecretKey12345678901234567890"))
-                };
-            });
+           .AddJwtBearer(options =>
+           {
+               options.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuer = true,
+                   ValidateAudience = true,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   ValidIssuer = jwtSettings["Issuer"] ?? "SoundClone",
+                   ValidAudience = jwtSettings["Audience"] ?? "SoundCloneUsers",
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"] ?? "YourSuperSecretKey12345678901234567890"))
+               };
+           });
 
             var app = builder.Build();
 

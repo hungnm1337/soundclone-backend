@@ -42,7 +42,7 @@ namespace Repositories.SignUp
                     Username = model.Username,
                     HashedPassword = HashPasswordSHA256(model.HashedPassword),
                     Status = "ACTIVE",
-                    RoleId = 1
+                    RoleId = 5
 
                 };
                 _soundcloneContext.Users.Add(newUser);

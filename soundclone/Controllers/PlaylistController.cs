@@ -16,7 +16,7 @@ namespace soundclone.Controllers
             _playlistService = playlistService;
         }
         [HttpGet]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "5")]
         public async Task<IActionResult> GetPlaylistsByUserId(int userId)
         {
             try
@@ -37,7 +37,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "5")]
         public async Task<IActionResult> CreateNewPlaylist([FromBody] PlaylistDTO playlist)
         {
             try
@@ -56,13 +56,13 @@ namespace soundclone.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "5")]
         public async Task<IActionResult> UpdatePlaylist([FromBody] UpdatePlaylistDTO playlist)
         {
             try
             {
                 var resultUpdate = await _playlistService.UpdatePlaylist(playlist);
-                if(resultUpdate == null)
+                if (resultUpdate == null)
                 {
                     return BadRequest(resultUpdate);
                 }

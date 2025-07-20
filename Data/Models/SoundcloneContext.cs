@@ -42,7 +42,6 @@ public partial class SoundcloneContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var builder = new ConfigurationBuilder();
@@ -56,6 +55,12 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<Comment>(entity =>
         {
             entity.HasKey(e => e.CommentId).HasName("PK__Comments__E7957687EA239FA6");
+
+            entity.HasIndex(e => e.ParentCommentId, "IX_Comments_parent_comment_id");
+
+            entity.HasIndex(e => e.TrackId, "IX_Comments_track_id");
+
+            entity.HasIndex(e => e.WriteBy, "IX_Comments_write_by");
 
             entity.Property(e => e.CommentId).HasColumnName("comment_id");
             entity.Property(e => e.Content)
@@ -87,6 +92,10 @@ public partial class SoundcloneContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Follows__3213E83F7F2DA566");
 
+            entity.HasIndex(e => e.ArtistId, "IX_Follows_artist_id");
+
+            entity.HasIndex(e => e.FollowerId, "IX_Follows_follower_id");
+
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ArtistId).HasColumnName("artist_id");
             entity.Property(e => e.FollowerId).HasColumnName("follower_id");
@@ -105,6 +114,10 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<Invoice>(entity =>
         {
             entity.HasKey(e => e.InvoiceId).HasName("PK__Invoices__F58DFD4907B2EFDD");
+
+            entity.HasIndex(e => e.ServiceId, "IX_Invoices_service_id");
+
+            entity.HasIndex(e => e.UserId, "IX_Invoices_user_id");
 
             entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
             entity.Property(e => e.Date)
@@ -131,6 +144,10 @@ public partial class SoundcloneContext : DbContext
         {
             entity.HasKey(e => e.LikePlaylistId).HasName("PK__LikePlay__23AB7E9BC00BE761");
 
+            entity.HasIndex(e => e.PlaylistId, "IX_LikePlaylists_playlist_id");
+
+            entity.HasIndex(e => e.UserId, "IX_LikePlaylists_user_id");
+
             entity.Property(e => e.LikePlaylistId).HasColumnName("like_playlist_id");
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
             entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -150,6 +167,10 @@ public partial class SoundcloneContext : DbContext
         {
             entity.HasKey(e => e.LikeTrackId).HasName("PK__LikeTrac__C25CFAA759CAA246");
 
+            entity.HasIndex(e => e.TrackId, "IX_LikeTracks_track_id");
+
+            entity.HasIndex(e => e.UserId, "IX_LikeTracks_user_id");
+
             entity.Property(e => e.LikeTrackId).HasColumnName("like_track_id");
             entity.Property(e => e.TrackId).HasColumnName("track_id");
             entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -168,6 +189,10 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<Notification>(entity =>
         {
             entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__E059842FEB61BD7D");
+
+            entity.HasIndex(e => e.ActorId, "IX_Notifications_actor_id");
+
+            entity.HasIndex(e => e.RecipienId, "IX_Notifications_recipien_id");
 
             entity.Property(e => e.NotificationId).HasColumnName("notification_id");
             entity.Property(e => e.ActorId).HasColumnName("actor_id");
@@ -197,7 +222,10 @@ public partial class SoundcloneContext : DbContext
         {
             entity.HasKey(e => e.PlaylistId).HasName("PK__Playlist__FB9C1410280ABA50");
 
+            entity.HasIndex(e => e.MakeBy, "IX_Playlists_make_by");
+
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
+            entity.Property(e => e.IsPublish).HasColumnName("is_publish");
             entity.Property(e => e.MakeBy).HasColumnName("make_by");
             entity.Property(e => e.MakeDate)
                 .HasColumnType("datetime")
@@ -218,6 +246,10 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<PlaylistTrack>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Playlist__3213E83F7A64EDD4");
+
+            entity.HasIndex(e => e.PlaylistId, "IX_PlaylistTracks_playlist_id");
+
+            entity.HasIndex(e => e.TrackId, "IX_PlaylistTracks_track_id");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.PlaylistId).HasColumnName("playlist_id");
@@ -268,6 +300,8 @@ public partial class SoundcloneContext : DbContext
         {
             entity.HasKey(e => e.SystemReportId).HasName("PK__SystemRe__668F938B69F7A9E4");
 
+            entity.HasIndex(e => e.UserId, "IX_SystemReports_user_id");
+
             entity.Property(e => e.SystemReportId).HasColumnName("system_report_id");
             entity.Property(e => e.Content)
                 .HasMaxLength(2048)
@@ -292,6 +326,8 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<Track>(entity =>
         {
             entity.HasKey(e => e.TrackId).HasName("PK__Tracks__24ECC82EB4CD4B2A");
+
+            entity.HasIndex(e => e.UpdateBy, "IX_Tracks_update_by");
 
             entity.Property(e => e.TrackId).HasColumnName("track_id");
             entity.Property(e => e.AudioFileUrl)
@@ -326,6 +362,8 @@ public partial class SoundcloneContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370F3633A4C2");
+
+            entity.HasIndex(e => e.RoleId, "IX_Users_role_id");
 
             entity.HasIndex(e => e.Email, "UQ__Users__AB6E61641B9BDFBE").IsUnique();
 

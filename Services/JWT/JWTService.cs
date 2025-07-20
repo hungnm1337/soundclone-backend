@@ -21,7 +21,7 @@ namespace Services.JWT
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["JWT:SecretKey"] ?? "YourSuperSecretKey12345678901234567890");
-            
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -36,7 +36,7 @@ namespace Services.JWT
                 Issuer = _configuration["JWT:Issuer"] ?? "SoundClone",
                 Audience = _configuration["JWT:Audience"] ?? "SoundCloneUsers",
                 SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(key), 
+                    new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)
             };
 
@@ -67,7 +67,7 @@ namespace Services.JWT
             var tokenHandler = new JwtSecurityTokenHandler();
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
 
-            if (securityToken is not JwtSecurityToken jwtSecurityToken || 
+            if (securityToken is not JwtSecurityToken jwtSecurityToken ||
                 !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new SecurityTokenException("Invalid token");
@@ -82,7 +82,7 @@ namespace Services.JWT
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(_configuration["JWT:SecretKey"] ?? "YourSuperSecretKey12345678901234567890");
-                
+
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
@@ -100,4 +100,4 @@ namespace Services.JWT
             }
         }
     }
-} 
+}

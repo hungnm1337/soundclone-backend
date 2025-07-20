@@ -11,8 +11,9 @@ namespace Services.Playlist
     public class PlaylistService : IPlaylistService
     {
         private readonly IPlaylistRepository _playlistRepository;
-        public PlaylistService(IPlaylistRepository playlistRepository) {
-        
+        public PlaylistService(IPlaylistRepository playlistRepository)
+        {
+
             _playlistRepository = playlistRepository;
         }
 

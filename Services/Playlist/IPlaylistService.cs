@@ -9,7 +9,7 @@ namespace Services.Playlist
 {
     public interface IPlaylistService
     {
-        
+
         Task<IEnumerable<Data.Models.Playlist>> GetPlaylistByUserId(int userId);
 
         Task<PlaylistDTO> CreateNewPlaylist(PlaylistDTO playlist);
