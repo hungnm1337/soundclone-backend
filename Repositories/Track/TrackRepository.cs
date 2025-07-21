@@ -15,25 +15,31 @@ namespace Repositories.Track
             _context = context;
         }
 
-        public async Task<TrackDTO> CreateTrackAsync(TrackDTO trackDto)
+        public async Task<CreateNewTrack> CreateTrackAsync(CreateNewTrack trackDto)
         {
-            var track = new Data.Models.Track
+            try
             {
-                Title = trackDto.Title,
-                Description = trackDto.Description,
-                AudioFileUrl = trackDto.AudioFileUrl,
-                CoverArtUrl = trackDto.CoverArtUrl,
-                WaveformUrl = trackDto.WaveformUrl,
-                DurationInSeconds = trackDto.DurationInSeconds,
-                IsPublic = trackDto.IsPublic,
-                UploadDate = trackDto.UploadDate,
-                UpdateBy = trackDto.UpdateBy,
-                PlayCount = trackDto.PlayCount
-            };
-            _context.Tracks.Add(track);
-            await _context.SaveChangesAsync();
-            trackDto.TrackId = track.TrackId;
-            return trackDto;
+                var track = new Data.Models.Track
+                {
+                    Title = trackDto.Title,
+                    Description = trackDto.Description,
+                    AudioFileUrl = trackDto.AudioFileUrl,
+                    CoverArtUrl = trackDto.CoverArtUrl,
+                    WaveformUrl = "",
+                    DurationInSeconds = (int)trackDto.DurationInSeconds,
+                    IsPublic = trackDto.IsPublic,
+                    UploadDate = DateTime.Now,
+                    UpdateBy = trackDto.UpdateBy,
+                    PlayCount = 0
+                };
+                _context.Tracks.Add(track);
+                await _context.SaveChangesAsync();
+                return trackDto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<IEnumerable<TrackDTO>> GetAllTracksAsync()
@@ -57,7 +63,11 @@ namespace Repositories.Track
         public async Task<TrackDTO> GetTrackByIdAsync(int trackId)
         {
             var t = await _context.Tracks.FindAsync(trackId);
+
             if (t == null) return null;
+            t.PlayCount++;
+            _context.Tracks.Update(t);
+            await _context.SaveChangesAsync();
             return new TrackDTO
             {
                 TrackId = t.TrackId,
@@ -118,5 +128,36 @@ namespace Repositories.Track
                 }).ToListAsync();
             return comments;
         }
+
+        public async Task<IEnumerable<Album>> GetAlbums()
+        {
+            try
+            {
+                var listAlbum = await (
+                  from track in _context.Tracks
+                  join user in _context.Users on track.UpdateBy equals user.UserId into userGroup
+                  from artist in userGroup.DefaultIfEmpty()
+                  where track.IsPublic
+                  orderby Guid.NewGuid() // S?p x?p ng?u nhiên
+                  select new Album
+                  {
+                      Id = track.TrackId,
+                      Title = track.Title,
+                      Artist = artist != null ? artist.Name : "No One",
+                      ImageUrl = track.CoverArtUrl,
+                      View = track.PlayCount,
+                      Year = track.UploadDate.Year
+                  }
+                ).Take(10).ToListAsync();
+
+                return listAlbum;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
     }
 }

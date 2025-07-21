@@ -7,11 +7,13 @@ namespace Repositories.Track
 {
     public interface ITrackRepository
     {
-        Task<TrackDTO> CreateTrackAsync(TrackDTO trackDto);
+        Task<CreateNewTrack> CreateTrackAsync(CreateNewTrack trackDto);
         Task<IEnumerable<TrackDTO>> GetAllTracksAsync();
         Task<TrackDTO> GetTrackByIdAsync(int trackId);
         Task<TrackDTO> UpdateTrackAsync(TrackDTO trackDto);
         Task<bool> DeleteTrackAsync(int trackId);
         Task<IEnumerable<CommentDTO>> GetTrackCommentsDetailAsync(int trackId);
+
+        Task<IEnumerable<Album>> GetAlbums();
     }
 }

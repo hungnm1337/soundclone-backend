@@ -1,5 +1,6 @@
 ﻿using Data.DTOs;
 using Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Services.LikePlaylist;
@@ -18,6 +19,7 @@ namespace soundclone.Controllers
         }
 
         [HttpGet("like-playlist/{Userid:int}")]
+        [Authorize(Roles = "5")]
         public async Task<ActionResult<IEnumerable<LikePlaylistDTO>>> GetLikePlaylistOfUser(int Userid)
         {
             try
@@ -36,6 +38,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("like-playlist")]
+        [Authorize(Roles = "5")]
         public async Task<IActionResult> LikePlaylist([FromBody] LikePlaylistDTO model)
         {
             try
@@ -54,6 +57,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("unlike-playlist/{likePlaylistId:int}")]
+        [Authorize(Roles = "5")]
         public async Task<IActionResult> UnlikePlaylist(int likePlaylistId)
         {
             try

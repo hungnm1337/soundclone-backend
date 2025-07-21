@@ -18,14 +18,14 @@ namespace soundclone.Controllers
             _trackService = trackService;
         }
 
-        [HttpGet]
+        [HttpGet("get-tracks")]
         public async Task<IActionResult> GetAllTracks()
         {
             var tracks = await _trackService.GetAllTracksAsync();
             return Ok(tracks);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getbyid/{id}")]
         public async Task<IActionResult> GetTrackById(int id)
         {
             var track = await _trackService.GetTrackByIdAsync(id);
@@ -33,15 +33,15 @@ namespace soundclone.Controllers
             return Ok(track);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         [Authorize(Roles = "5")]
-        public async Task<IActionResult> CreateTrack([FromBody] TrackDTO trackDto)
+        public async Task<ActionResult<CreateNewTrack>> CreateTrack([FromBody] CreateNewTrack trackDto)
         {
             var created = await _trackService.CreateTrackAsync(trackDto);
             return Ok(created);
         }
 
-        [HttpPut]
+        [HttpPut("update-track")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> UpdateTrack([FromBody] TrackDTO trackDto)
         {
@@ -50,7 +50,7 @@ namespace soundclone.Controllers
             return Ok(updated);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-track/{id}")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> DeleteTrack(int id)
         {
@@ -59,13 +59,27 @@ namespace soundclone.Controllers
             return Ok();
         }
 
-        [HttpGet("{id}/comments")]
-        public async Task<IActionResult> GetTrackCommentsDetail(int id)
+        [HttpGet("comments/{trackId}")]
+        public async Task<IActionResult> GetTrackCommentsDetail(int trackId)
         {
-            var comments = await _trackService.GetTrackCommentsDetailAsync(id);
+            var comments = await _trackService.GetTrackCommentsDetailAsync(trackId);
             return Ok(comments);
         }
 
-       
+        [HttpGet("albums")]
+        public async Task<IActionResult> GetAlbum()
+        {
+            try
+            {
+                var comments = await _trackService.GetAlbums();
+                return Ok(comments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,ex.Message);
+            }
+        }
+
+
     }
 } 

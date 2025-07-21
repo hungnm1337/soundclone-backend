@@ -13,7 +13,7 @@ namespace Services.Track
             _trackRepository = trackRepository;
         }
 
-        public async Task<TrackDTO> CreateTrackAsync(TrackDTO trackDto)
+        public async Task<CreateNewTrack> CreateTrackAsync(CreateNewTrack trackDto)
         {
             return await _trackRepository.CreateTrackAsync(trackDto);
         }
@@ -41,6 +41,11 @@ namespace Services.Track
         public async Task<IEnumerable<CommentDTO>> GetTrackCommentsDetailAsync(int trackId)
         {
             return await _trackRepository.GetTrackCommentsDetailAsync(trackId);
+        }
+
+        public async Task<IEnumerable<Album>> GetAlbums()
+        {
+            return await _trackRepository.GetAlbums();
         }
     }
 }
