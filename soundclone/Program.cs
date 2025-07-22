@@ -17,6 +17,8 @@ using Microsoft.Extensions.Configuration;
 using Services.Upload;
 using Repositories.LikePlaylist;
 using Services.LikePlaylist;
+using Repositories.Artist;
+using Services.Artist;
 
 namespace soundclone
 {
@@ -42,7 +44,8 @@ namespace soundclone
             // Add services to the container.
             builder.Services.AddScoped<ISignUpRepository, SignUpRepository>();
             builder.Services.AddScoped<ISignUpService, SignUpService>();
-
+            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+            builder.Services.AddScoped<IArtistService, ArtistService>();
             builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
             builder.Services.AddScoped<IPlaylistService, PlaylistService>();
             // Add Login services

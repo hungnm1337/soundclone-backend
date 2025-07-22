@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories.Artist
+namespace Services.Artist
 {
-    public interface IArtistRepository
+    public interface IArtistService
     {
         Task<IEnumerable<ArtistDTO>> GetTop5Artist();
+
     }
 }

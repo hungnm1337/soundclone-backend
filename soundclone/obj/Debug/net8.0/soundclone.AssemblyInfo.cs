@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("soundclone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cba34ba3e137318773887ca58634c1b8ef83a8b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a23e6e138e9e3d93983b260d7bd7ff04ff6c4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("soundclone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("soundclone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
