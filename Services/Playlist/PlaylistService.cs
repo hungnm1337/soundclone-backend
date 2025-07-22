@@ -31,7 +31,12 @@ namespace Services.Playlist
         {
             return await _playlistRepository.GetPlaylistByUserId(userId);
         }
-        
+
+        public async Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId)
+        {
+            return await _playlistRepository.GetPlaylistMenu(userId);
+        }
+
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
         {
             return await _playlistRepository.UpdatePlaylist(playlist);

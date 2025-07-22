@@ -13,7 +13,7 @@ namespace Repositories.Track
         Task<TrackDTO> UpdateTrackAsync(TrackDTO trackDto);
         Task<bool> DeleteTrackAsync(int trackId);
         Task<IEnumerable<CommentDTO>> GetTrackCommentsDetailAsync(int trackId);
-
         Task<IEnumerable<Album>> GetAlbums();
+
     }
 }

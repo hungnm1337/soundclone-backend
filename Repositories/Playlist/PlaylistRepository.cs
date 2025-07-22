@@ -93,6 +93,23 @@ namespace Repositories.Playlist
             }
         }
 
+        public async Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId)
+        {
+            var playlists = await _soundcloneContext.Playlists.
+                Include(x => x.PlaylistTracks).
+                Where(x => x.MakeBy == userId).Select(
+                x => new PlaylistMenuDTO()
+                {
+                    PlaylistId = x.PlaylistId,
+                    Title = x.Title,
+                    PicturePlaylistUrl = x.PicturePlaylistUrl,
+                    TrackQuantity = x.PlaylistTracks.Count,
+                    IsPublish = x.IsPublish,
+                })
+                .ToListAsync();
+            return playlists;
+        }
+
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
         {
             try

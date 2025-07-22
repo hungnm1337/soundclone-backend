@@ -36,7 +36,7 @@ namespace soundclone.Controllers
             }
         }
 
-        [HttpPost("create")]
+        [HttpPost("create-playlist")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> CreateNewPlaylist([FromBody] PlaylistDTO playlist)
         {
@@ -97,5 +97,13 @@ namespace soundclone.Controllers
             }
         }
 
+        [HttpGet("playlist-menu")]
+        [Authorize(Roles = "5")]
+        public async Task<IActionResult> GetPlaylistMenu(int userId)
+        {
+            var playlists = await _playlistService.GetPlaylistMenu(userId);
+            if (playlists == null) return NotFound();
+            return Ok(playlists);
+        }
     }
 }

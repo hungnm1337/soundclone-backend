@@ -17,5 +17,7 @@ namespace Repositories.Playlist
 
         Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model);
 
+        Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId);
+
     }
 }

@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace Data.DTOs
 {
+    public class PlaylistMenuDTO
+    {
+        public int PlaylistId { get; set; }
+        public string Title { get; set; }
+        public string? PicturePlaylistUrl { get; set; }
+        public int TrackQuantity {  get; set; }
+        public bool IsPublish { get; set; }
+
+    }
+
     public class PlaylistDTO
     {
         public string Title { get; set; } = null!;
 
         public int MakeBy { get; set; }
 
-        public string? PicturePlaylistUrl { get; set; }
+        public string PicturePlaylistUrl { get; set; }
 
         public bool IsPublish {  get; set; }
     }
