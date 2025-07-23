@@ -17,6 +17,11 @@ namespace Services.Artist
             _artistRepository = artistRepository;
         }
 
+        public async Task<ArtistDetailDTO> GetArtistDetail(int UserId)
+        {
+            return await _artistRepository.GetArtistDetail(UserId);
+        }
+
         public async Task<IEnumerable<ArtistDTO>> GetTop5Artist()
         {
             return await _artistRepository.GetTop5Artist();

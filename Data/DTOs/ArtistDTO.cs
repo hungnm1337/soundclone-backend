@@ -14,4 +14,18 @@ namespace Data.DTOs
 
         public string? ProfilePictureUrl { get; set; }
     }
+
+    public class ArtistDetailDTO
+    {
+        public int UserId { get; set; }
+
+        public string Name { get; set; } = null!;
+
+        public string? ProfilePictureUrl { get; set; }
+
+        public int FollowingQuantity { get; set; }
+
+        public int FollowerQuantity {  get; set; }
+
+    }
 }

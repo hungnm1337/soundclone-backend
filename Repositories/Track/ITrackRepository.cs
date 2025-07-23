@@ -15,5 +15,7 @@ namespace Repositories.Track
         Task<IEnumerable<CommentDTO>> GetTrackCommentsDetailAsync(int trackId);
         Task<IEnumerable<Album>> GetAlbums();
 
+        Task<IEnumerable<Album>> GetAlbumsByArtistId(int userId);
+
     }
 }

@@ -1,4 +1,4 @@
-using Data.DTOs;
+ï»¿using Data.DTOs;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -138,7 +138,7 @@ namespace Repositories.Track
                   join user in _context.Users on track.UpdateBy equals user.UserId into userGroup
                   from artist in userGroup.DefaultIfEmpty()
                   where track.IsPublic
-                  orderby Guid.NewGuid() // S?p x?p ng?u nhiên
+                  orderby Guid.NewGuid()
                   select new Album
                   {
                       Id = track.TrackId,
@@ -158,7 +158,33 @@ namespace Repositories.Track
             }
         }
 
+        public async Task<IEnumerable<Album>> GetAlbumsByArtistId(int userId)
+        {
+            try
+            {
+                var listAlbum = await (
+                  from track in _context.Tracks
+                  join user in _context.Users on track.UpdateBy equals user.UserId into userGroup
+                  from artist in userGroup.DefaultIfEmpty()
+                  where track.IsPublic && artist.UserId == userId
+                  orderby Guid.NewGuid()
+                  select new Album
+                  {
+                      Id = track.TrackId,
+                      Title = track.Title,
+                      Artist = artist != null ? artist.Name : "No One",
+                      ImageUrl = track.CoverArtUrl,
+                      View = track.PlayCount,
+                      Year = track.UploadDate.Year
+                  }
+                ).Take(10).ToListAsync();
 
-
+                return listAlbum;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

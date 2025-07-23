@@ -18,6 +18,23 @@ namespace Repositories.Artist
             _soundcloneContext = soundcloneContext;
         }
 
+        public async Task<ArtistDetailDTO> GetArtistDetail(int UserId)
+        {
+            int FollowingQuantity = _soundcloneContext.Follows.
+                Where(x => x.FollowerId == UserId).Count();
+            int FollowerQuantity = _soundcloneContext.Follows.
+                Where(x => x.ArtistId == UserId).Count();
+            var artist = await _soundcloneContext.Users.FindAsync(UserId);
+            return new ArtistDetailDTO
+            {
+                UserId = artist.UserId,
+                FollowerQuantity = FollowerQuantity,
+                FollowingQuantity = FollowingQuantity,
+                Name = artist.Name,
+                ProfilePictureUrl = artist.ProfilePictureUrl
+            };
+        }
+
         public async Task<IEnumerable<ArtistDTO>> GetTop5Artist()
         {
             var artists = await (from user  in _soundcloneContext.Users

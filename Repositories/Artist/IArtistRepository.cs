@@ -10,5 +10,7 @@ namespace Repositories.Artist
     public interface IArtistRepository
     {
         Task<IEnumerable<ArtistDTO>> GetTop5Artist();
+
+        Task<ArtistDetailDTO> GetArtistDetail(int UserId);
     }
 }

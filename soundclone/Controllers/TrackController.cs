@@ -71,12 +71,26 @@ namespace soundclone.Controllers
         {
             try
             {
-                var comments = await _trackService.GetAlbums();
-                return Ok(comments);
+                var albums = await _trackService.GetAlbums();
+                return Ok(albums);
             }
             catch (Exception ex)
             {
                 return StatusCode(500,ex.Message);
+            }
+        }
+
+        [HttpGet("albums/{userId}")]
+        public async Task<IActionResult> GetAlbumsByArtistId(int userId)
+        {
+            try
+            {
+                var albums = await _trackService.GetAlbumsByArtistId(userId);
+                return Ok(albums);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 

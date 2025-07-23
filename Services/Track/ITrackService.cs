@@ -15,5 +15,7 @@ namespace Services.Track
 
         Task<IEnumerable<Album>> GetAlbums();
 
+        Task<IEnumerable<Album>> GetAlbumsByArtistId(int userId);
+
     }
 } 

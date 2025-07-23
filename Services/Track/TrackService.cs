@@ -47,5 +47,10 @@ namespace Services.Track
         {
             return await _trackRepository.GetAlbums();
         }
+
+        public async Task<IEnumerable<Album>> GetAlbumsByArtistId(int userId)
+        {
+            return await _trackRepository.GetAlbumsByArtistId(userId);
+        }
     }
 }
