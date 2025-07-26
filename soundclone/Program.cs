@@ -19,6 +19,8 @@ using Repositories.LikePlaylist;
 using Services.LikePlaylist;
 using Repositories.Artist;
 using Services.Artist;
+using Repositories.Profile;
+using Services.Profile;
 
 namespace soundclone
 {
@@ -57,7 +59,8 @@ namespace soundclone
             builder.Services.AddScoped<IUploadService, UploadService>();
             builder.Services.AddScoped<ILikePlaylistRepository, LikePlaylistRepository>();
             builder.Services.AddScoped<ILikePlaylistService, LikePlaylistService>();
-
+            builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+            builder.Services.AddScoped<IProfileService, ProfileService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
