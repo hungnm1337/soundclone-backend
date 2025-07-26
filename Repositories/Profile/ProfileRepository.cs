@@ -1,5 +1,6 @@
 ﻿using Data.DTOs;
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,11 +74,17 @@ namespace Repositories.Profile
             try
             {
                 User oldUserInformation = await _soundcloneContext.Users.FindAsync(model.UserId);
+               
+                if (oldUserInformation == null)
+                {
+                    return false;
+                }
                 oldUserInformation.Bio = model.Bio;
                 oldUserInformation.Name = model.Name;
                 oldUserInformation.Email = model.Email;
                 oldUserInformation.DayOfBirth = model.DayOfBirth;
                 oldUserInformation.PhoneNumber = model.PhoneNumber;
+                oldUserInformation.UpdateAt = DateTime.Now;
                 _soundcloneContext.Users.Update(oldUserInformation);
                 await _soundcloneContext.SaveChangesAsync();
                 return true;
