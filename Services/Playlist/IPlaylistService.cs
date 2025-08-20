@@ -20,6 +20,7 @@ namespace Services.Playlist
 
         Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId);
 
+        Task<bool> AddTrackToPlaylist(AddTrackToPlaylistDTO model);
 
     }
 }

@@ -19,6 +19,25 @@ namespace Repositories.Playlist
             _soundcloneContext = soundcloneContext;
         }
 
+        public async Task<bool> AddTrackToPlaylist(AddTrackToPlaylistDTO model)
+        {
+            try
+            {
+                PlaylistTrack newPlaylistTrack = new PlaylistTrack()
+                {
+                    PlaylistId = model.PlaylistId,
+                    TrackId = model.TrackId
+                };
+                _soundcloneContext.PlaylistTracks.Add(newPlaylistTrack);
+                await _soundcloneContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public async Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model)
         {
             try

@@ -105,5 +105,19 @@ namespace soundclone.Controllers
             if (playlists == null) return NotFound();
             return Ok(playlists);
         }
+
+        [HttpPost("add-track")]
+        [Authorize(Roles = "5")]
+        public async Task<ActionResult<bool>> AddTracktoPlaylist([FromBody]AddTrackToPlaylistDTO model)
+        {
+            try
+            {
+                return await _playlistService.AddTrackToPlaylist(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

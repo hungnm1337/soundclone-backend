@@ -17,6 +17,11 @@ namespace Services.Playlist
             _playlistRepository = playlistRepository;
         }
 
+        public async Task<bool> AddTrackToPlaylist(AddTrackToPlaylistDTO model)
+        {
+            return await _playlistRepository.AddTrackToPlaylist(model);
+        }
+
         public async Task<bool> ChangeStatusPublicOfPlaylist(ChangeStatusPlaylistDTO model)
         {
             return await _playlistRepository.ChangeStatusPublicOfPlaylist(model);

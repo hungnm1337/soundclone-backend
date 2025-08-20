@@ -19,5 +19,6 @@ namespace Repositories.Playlist
 
         Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId);
 
+        Task<bool> AddTrackToPlaylist(AddTrackToPlaylistDTO model);
     }
 }
