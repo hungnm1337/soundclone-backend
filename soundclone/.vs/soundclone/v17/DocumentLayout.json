@@ -81,8 +81,7 @@
               "RelativeToolTip": "Controllers\\LikePlaylistController.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T16:00:00.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T16:00:00.957Z"
             },
             {
               "$type": "Document",
@@ -94,8 +93,7 @@
               "RelativeToolTip": "..\\Services\\Playlist\\IPlaylistService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T14:55:07.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T14:55:07.714Z"
             },
             {
               "$type": "Document",
@@ -107,8 +105,7 @@
               "RelativeToolTip": "..\\Services\\Playlist\\PlaylistService.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwCcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T14:55:06.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T14:55:06.493Z"
             },
             {
               "$type": "Document",
@@ -120,8 +117,7 @@
               "RelativeToolTip": "Controllers\\PlaylistController.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAswHwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T14:53:37.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T14:53:37.431Z"
             },
             {
               "$type": "Document",
@@ -131,7 +127,7 @@
               "RelativeDocumentMoniker": "..\\Data\\DTOs\\PlaylistDTO.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\PlaylistDTO.cs",
               "RelativeToolTip": "..\\Data\\DTOs\\PlaylistDTO.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAA9wFwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-28T15:43:16.155Z",
               "EditorCaption": ""
@@ -146,8 +142,7 @@
               "RelativeToolTip": "..\\Services\\ListData\\IListDataService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T06:56:49.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T06:56:49.044Z"
             },
             {
               "$type": "Document",
@@ -159,8 +154,7 @@
               "RelativeToolTip": "..\\Repositories\\Playlist\\IPlaylistRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T14:54:15.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T14:54:15.546Z"
             },
             {
               "$type": "Document",
@@ -172,8 +166,7 @@
               "RelativeToolTip": "..\\Repositories\\Playlist\\PlaylistRepository.cs",
               "ViewState": "AgIAAHIAAAAAAAAAAAAowIUAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T14:55:14.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T14:55:14.093Z"
             },
             {
               "$type": "Document",
@@ -185,8 +178,7 @@
               "RelativeToolTip": "..\\Repositories\\ListData\\IListDataRepository.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T15:54:51.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-28T15:54:51.829Z"
             },
             {
               "$type": "Document",
@@ -198,8 +190,7 @@
               "RelativeToolTip": "..\\Repositories\\ListData\\ListDataRepository.cs",
               "ViewState": "AgIAAJwAAAAAAAAAAAAIwK4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T07:57:15.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T07:57:15.503Z"
             },
             {
               "$type": "Document",
@@ -211,8 +202,7 @@
               "RelativeToolTip": "..\\Services\\ListData\\ListDataService.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAkwDoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T06:28:43.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T06:28:43.432Z"
             },
             {
               "$type": "Document",
