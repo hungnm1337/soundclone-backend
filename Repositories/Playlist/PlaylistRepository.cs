@@ -112,6 +112,29 @@ namespace Repositories.Playlist
             }
         }
 
+        public async Task<PlayListDetailDTO> GetPlayListDetail(int playlistId)
+        {
+            var playlist = await _soundcloneContext.Playlists.
+               Include(x => x.PlaylistTracks).
+               Where(x => x.PlaylistId == playlistId).Select(
+               x => new PlayListDetailDTO()
+               {
+                   PlaylistId = x.PlaylistId,
+                   Title = x.Title,
+                   PicturePlaylistUrl = x.PicturePlaylistUrl,
+                   TrackQuantity = x.PlaylistTracks.Count,
+                   IsPublish = x.IsPublish,
+                   ArtistId = x.MakeBy,
+                   ArtistName = "Artist"
+
+               })
+               .FirstOrDefaultAsync();
+
+            var artist = await _soundcloneContext.Users.FindAsync(playlist.ArtistId);
+            playlist.ArtistName = artist != null ? artist.Name : "Playlist public";
+            return playlist;
+        }
+
         public async Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId)
         {
             var playlists = await _soundcloneContext.Playlists.

@@ -43,4 +43,16 @@ namespace Data.DTOs
 
         public string ImageUrl { get; set; }
     }
+
+    public class ListTrackDTO
+    {
+        public int TrackId { get; set; }
+
+        public string Title { get; set; }
+
+        public string CoverArtUrl { get; set; }
+
+        public string ArtistName {  get; set; }
+
+    }
 } 

@@ -72,4 +72,29 @@ namespace Data.DTOs
 
     }
 
+    public class ListPlaylistDTO
+    {
+        public int PlaylistId { get; set; }
+
+        public string Title { get; set; }
+
+        public string? PicturePlaylistUrl { get; set; }
+        public string ArtistName { get; set; }
+    }
+
+    public class PlayListDetailDTO
+    {
+        public int PlaylistId { get; set; }
+
+        public string Title { get; set; }
+
+        public string? PicturePlaylistUrl { get; set; }
+
+        public int ArtistId {  get; set; }
+        public string ArtistName { get; set; }
+
+        public bool IsPublish { get; set; }
+
+        public int TrackQuantity { get; set; }
+    }
 }

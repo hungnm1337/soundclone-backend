@@ -15,7 +15,7 @@ namespace soundclone.Controllers
         {
             _playlistService = playlistService;
         }
-        [HttpGet("getplaylist/{userId:int}")]
+        [HttpGet("get-playlists/{userId:int}")]
         [Authorize(Roles = "5")]
         public async Task<IActionResult> GetPlaylistsByUserId(int userId)
         {
@@ -113,6 +113,20 @@ namespace soundclone.Controllers
             try
             {
                 return await _playlistService.AddTrackToPlaylist(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("playlist-detail/{playlistId:int}")]
+        [Authorize(Roles = "5")]
+        public async Task<ActionResult<PlayListDetailDTO>> GetPlaylistDetail(int playlistId)
+        {
+            try
+            {
+                return await _playlistService.GetPlayListDetail(playlistId);
             }
             catch (Exception ex)
             {

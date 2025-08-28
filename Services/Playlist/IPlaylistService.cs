@@ -22,5 +22,7 @@ namespace Services.Playlist
 
         Task<bool> AddTrackToPlaylist(AddTrackToPlaylistDTO model);
 
+        Task<PlayListDetailDTO> GetPlayListDetail(int playlistId);
+
     }
 }
