@@ -13,5 +13,7 @@ namespace Repositories.LikePlaylist
 
         Task<bool> LikePlaylist(LikePlaylistDTO playlist);
         Task<bool> UnlikePlaylist(int likePlaylistId);
+
+        Task<int> GetLikePlaylistCount(int playlistId);
     }
 }

@@ -11,5 +11,7 @@ namespace Services.LikeTrack
         Task<bool> toggleUserLikeTrackStatus(int trackId, int userId);
 
         Task<bool> isLikedTrack(int trackId, int userId);
+
+        Task<int> GetLikeTrackCount(int trackId);
     }
 }

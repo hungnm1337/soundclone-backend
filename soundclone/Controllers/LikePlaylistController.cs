@@ -74,5 +74,19 @@ namespace soundclone.Controllers
                 return StatusCode(500);
             }
         }
+
+        [HttpGet("like-playlist-count/{playlistId:int}")]
+        public async Task<ActionResult<int>> GetLikePlaylistCount(int playlistId)
+        {
+            try
+            {
+                int likePlaylistCount = await _likePlaylistService.GetLikePlaylistCount(playlistId);
+                return likePlaylistCount;
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
+        }
     }
 }

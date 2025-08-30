@@ -17,6 +17,11 @@ namespace Services.LikePlaylist
             _likePlaylistRepository = likePlaylistRepository;
         }
 
+        public async Task<int> GetLikePlaylistCount(int playlistId)
+        {
+            return await _likePlaylistRepository.GetLikePlaylistCount(playlistId);
+        }
+
         public async Task<List<LikePlaylistDTO>> GetLikePlaylistOfUser(int userId)
         {
             return await _likePlaylistRepository.GetLikePlaylistOfUser(userId);

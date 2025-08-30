@@ -16,6 +16,11 @@ namespace Services.LikeTrack
             _likeTrackRepository = likeTrackRepository;
         }
 
+        public async Task<int> GetLikeTrackCount(int trackId)
+        {
+            return await _likeTrackRepository.GetLikeTrackCount(trackId);
+        }
+
         public async Task<bool> isLikedTrack(int trackId, int userId)
         {
             return await _likeTrackRepository.isLikedTrack(trackId, userId);

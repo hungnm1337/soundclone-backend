@@ -41,5 +41,19 @@ namespace soundclone.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("like-track-count/{trackId:int}")]
+        public async Task<ActionResult<int>> GetLikeTrackCount(int trackId)
+        {
+            try
+            {
+                int likeTrackCount = await _likeTrackService.GetLikeTrackCount(trackId);
+                return Ok(likeTrackCount);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

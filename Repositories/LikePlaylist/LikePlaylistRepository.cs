@@ -18,6 +18,12 @@ namespace Repositories.LikePlaylist
             _soundcloneContext = soundcloneContext;
         }
 
+        public async Task<int> GetLikePlaylistCount(int playlistId)
+        {
+            var count = await _soundcloneContext.LikePlaylists.Where(x => x.PlaylistId == playlistId).CountAsync();
+            return count;
+        }
+
         public async Task<List<LikePlaylistDTO>> GetLikePlaylistOfUser(int userId)
         {
             try

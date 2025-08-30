@@ -17,6 +17,12 @@ namespace Repositories.LikeTrack
             _soundcloneContext = soundcloneContext;
         }
 
+        public async Task<int> GetLikeTrackCount(int trackId)
+        {
+            var count = await _soundcloneContext.LikeTracks.Where(x => x.TrackId == trackId).CountAsync();
+            return count;
+        }
+
         public async Task<bool> isLikedTrack(int trackId, int userId)
         {
             var like = await _soundcloneContext.LikeTracks
