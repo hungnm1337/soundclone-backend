@@ -32,6 +32,11 @@ namespace Services.Playlist
             return await _playlistRepository.CreateNewPlaylist(playlist);
         }
 
+        public async Task<bool> DeletePlaylist(DeletePlaylistDTO model)
+        {
+            return await _playlistRepository.DeletePlaylist(model);
+        }
+
         public async Task<IEnumerable<Data.Models.Playlist>> GetPlaylistByUserId(int userId)
         {
             return await _playlistRepository.GetPlaylistByUserId(userId);

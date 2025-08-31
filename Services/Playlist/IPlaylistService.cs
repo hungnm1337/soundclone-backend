@@ -24,5 +24,8 @@ namespace Services.Playlist
 
         Task<PlayListDetailDTO> GetPlayListDetail(int playlistId);
 
+        Task<bool> DeletePlaylist(DeletePlaylistDTO model);
+
+
     }
 }

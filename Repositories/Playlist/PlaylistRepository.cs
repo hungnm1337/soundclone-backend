@@ -97,6 +97,37 @@ namespace Repositories.Playlist
             }
         }
 
+        public async Task<bool> DeletePlaylist(DeletePlaylistDTO model)
+        {
+            try
+            {
+                var likedPlaylists = await _soundcloneContext.LikePlaylists
+                    .Where(x => x.PlaylistId == model.PlaylistId)
+                    .ToListAsync();
+
+                var tracksInPlaylist = await _soundcloneContext.PlaylistTracks
+                    .Where(x => x.PlaylistId == model.PlaylistId)
+                    .ToListAsync();
+
+                var playlist = await _soundcloneContext.Playlists
+                    .FindAsync(model.PlaylistId);
+
+                if (playlist == null || playlist.MakeBy != model.UserId) return false;
+
+                _soundcloneContext.LikePlaylists.RemoveRange(likedPlaylists);
+                _soundcloneContext.PlaylistTracks.RemoveRange(tracksInPlaylist);
+                _soundcloneContext.Playlists.Remove(playlist);
+
+                await _soundcloneContext.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
         public async Task<IEnumerable<Data.Models.Playlist>> GetPlaylistByUserId(int userId)
         {
             try
@@ -152,17 +183,20 @@ namespace Repositories.Playlist
             return playlists;
         }
 
+        
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
         {
             try
             {
                 var playlistCur = await _soundcloneContext.Playlists.FindAsync(playlist.PlaylistId);
-                if (playlistCur == null)
+                if (playlistCur == null || playlistCur.MakeBy!= playlist.UserId)
                 {
                     return null;
                 }
                 playlistCur.Title = playlist.Title;
                 playlistCur.PicturePlaylistUrl = playlist.PicturePlaylistUrl;
+                playlistCur.IsPublish = playlist.IsPublish;
+               
 
                 _soundcloneContext.Playlists.Update(playlistCur);
                 await _soundcloneContext.SaveChangesAsync();
@@ -173,5 +207,7 @@ namespace Repositories.Playlist
                 return null;
             }
         }
+
+
     }
 }

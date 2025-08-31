@@ -19,7 +19,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("isLiked")]
-
+        [Authorize(Roles = "5")]
         public async Task<ActionResult<bool>> IsTrackLiked([FromBody] LikePlaylistInput input)
         {
             try

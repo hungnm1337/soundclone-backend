@@ -17,7 +17,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("isLiked")]
-
+        [Authorize(Roles = "5")]
 
         public async Task<ActionResult<bool>> IsTrackLiked([FromBody] LikeTrackInput input)
         {
@@ -28,7 +28,7 @@ namespace soundclone.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return false;
             }
         }
 

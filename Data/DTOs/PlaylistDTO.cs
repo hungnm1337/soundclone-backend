@@ -29,11 +29,23 @@ namespace Data.DTOs
 
     public class UpdatePlaylistDTO
     {
+
         public int PlaylistId { get; set; }
+
+        public int UserId {  get; set; }
 
         public string Title { get; set; } = null!;
 
         public string? PicturePlaylistUrl { get; set; }
+
+        public bool IsPublish {  get; set; }
+    }
+
+    public class DeletePlaylistDTO
+    {
+        public int UserId { get; set; }
+
+        public int PlaylistId { get; set; }
     }
 
     public class GetPlaylistDTO

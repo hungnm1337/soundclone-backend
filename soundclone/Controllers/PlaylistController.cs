@@ -133,5 +133,18 @@ namespace soundclone.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("delete-playlist")]
+        public async Task<ActionResult<bool>> RemovePlaylist([FromBody] DeletePlaylistDTO model)
+        {
+            try
+            {
+                return await _playlistService.DeletePlaylist(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
