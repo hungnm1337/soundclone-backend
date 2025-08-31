@@ -24,56 +24,34 @@ namespace Repositories.LikePlaylist
             return count;
         }
 
-        public async Task<List<LikePlaylistDTO>> GetLikePlaylistOfUser(int userId)
+        public async Task<bool> IsLikedPlaylist(int playlistId, int userId)
         {
-            try
-            {
-                var playlistsLikeByUser = await _soundcloneContext.LikePlaylists.
-                    Where(x => x.UserId == userId).
-                    Select(x => new LikePlaylistDTO()
-                {
-                    LikePlaylistId = x.LikePlaylistId,
-                    UserId = x.UserId,
-                    PlaylistId = x.PlaylistId,
-
-                }).ToListAsync();
-                return playlistsLikeByUser;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            var liked = await _soundcloneContext.LikePlaylists.
+                FirstOrDefaultAsync(x => x.PlaylistId == playlistId && x.UserId == userId);
+            return liked != null;
         }
 
-        public async Task<bool> LikePlaylist(LikePlaylistDTO model)
+        public async Task<bool> ToggleUserLikePlaylistStatus(int playlistId, int userId)
         {
+            var liked = await _soundcloneContext.LikePlaylists.
+              FirstOrDefaultAsync(x => x.PlaylistId == playlistId && x.UserId == userId);
             try
             {
-                Data.Models.User user = await _soundcloneContext.Users.FindAsync(model.UserId);
-                Data.Models.Playlist playlist = await _soundcloneContext.Playlists.FindAsync(model.PlaylistId);
-
-                if (user == null || playlist == null)
+                if (liked != null)
                 {
-                    return false;
+                    _soundcloneContext.LikePlaylists.Remove(liked);
+                  
                 }
-
-                var playlistUserLike = await _soundcloneContext.LikePlaylists.Where(x => x.UserId == model.UserId).ToListAsync();
-                foreach (var item in playlistUserLike)
+                else
                 {
-                    if (item.PlaylistId == model.PlaylistId)
+                    var newLike = new Data.Models.LikePlaylist()
                     {
-                        return false;
-                    }
+                        PlaylistId = playlistId,
+                        UserId = userId
+                    };
+                    _soundcloneContext.LikePlaylists.Add(newLike);
+                 
                 }
-
-                Data.Models.LikePlaylist newLikePlaylist = new Data.Models.LikePlaylist()
-                {
-                    UserId = model.UserId,
-                    PlaylistId = model.PlaylistId
-                };
-
-                await _soundcloneContext.LikePlaylists.AddAsync(newLikePlaylist);
                 await _soundcloneContext.SaveChangesAsync();
                 return true;
             }
@@ -81,29 +59,7 @@ namespace Repositories.LikePlaylist
             {
                 return false;
             }
-        }
 
-
-        public async Task<bool> UnlikePlaylist(int likePlaylistId)
-        {
-            try
-            {
-                var likePlaylist = await _soundcloneContext.LikePlaylists.FindAsync(likePlaylistId);
-                          
-                if (likePlaylist == null)
-                {
-                    return false;
-                }
-                _soundcloneContext.LikePlaylists.Remove(likePlaylist);
-                await _soundcloneContext.SaveChangesAsync() ;
-                return true;
-
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
         }
     }
 }

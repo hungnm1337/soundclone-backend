@@ -9,10 +9,8 @@ namespace Repositories.LikePlaylist
 {
     public interface ILikePlaylistRepository
     {
-        Task<List<LikePlaylistDTO>> GetLikePlaylistOfUser(int userId);
-
-        Task<bool> LikePlaylist(LikePlaylistDTO playlist);
-        Task<bool> UnlikePlaylist(int likePlaylistId);
+        Task<bool> ToggleUserLikePlaylistStatus(int playlistId, int userId);
+        Task<bool> IsLikedPlaylist(int playlistId, int userId);
 
         Task<int> GetLikePlaylistCount(int playlistId);
     }

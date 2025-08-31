@@ -22,19 +22,14 @@ namespace Services.LikePlaylist
             return await _likePlaylistRepository.GetLikePlaylistCount(playlistId);
         }
 
-        public async Task<List<LikePlaylistDTO>> GetLikePlaylistOfUser(int userId)
+        public async Task<bool> IsLikedPlaylist(int playlistId, int userId)
         {
-            return await _likePlaylistRepository.GetLikePlaylistOfUser(userId);
+            return await _likePlaylistRepository.IsLikedPlaylist(playlistId, userId);
         }
 
-        public async Task<bool> LikePlaylist(LikePlaylistDTO playlist)
+        public async Task<bool> ToggleUserLikePlaylistStatus(int playlistId, int userId)
         {
-            return await _likePlaylistRepository.LikePlaylist(playlist);
-        }
-
-        public async Task<bool> UnlikePlaylist(int likePlaylistId)
-        {
-            return await _likePlaylistRepository.UnlikePlaylist(likePlaylistId);
+            return await _likePlaylistRepository.ToggleUserLikePlaylistStatus(playlistId, userId);
         }
     }
 }

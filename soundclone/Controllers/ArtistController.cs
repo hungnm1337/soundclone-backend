@@ -25,7 +25,7 @@ namespace soundclone.Controllers
             return Ok(artists);
         }
 
-        [HttpGet("get/{userId:int}")]
+        [HttpGet("get-artist-detail/{userId:int}")]
         public async Task<IActionResult> GetArtistDetail(int userId)
         {
             var artistDetail = await _artistService.GetArtistDetail(userId);

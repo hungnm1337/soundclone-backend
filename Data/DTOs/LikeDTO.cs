@@ -34,4 +34,10 @@ namespace Data.DTOs
         public int UserId { get; set; }
     }
 
+    public class LikePlaylistInput
+    {
+        public int PlaylistId { get; set; }
+        public int UserId { get; set; }
+    }
+
 }

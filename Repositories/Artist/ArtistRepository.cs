@@ -31,7 +31,12 @@ namespace Repositories.Artist
                 FollowerQuantity = FollowerQuantity,
                 FollowingQuantity = FollowingQuantity,
                 Name = artist.Name,
-                ProfilePictureUrl = artist.ProfilePictureUrl
+                ProfilePictureUrl = artist.ProfilePictureUrl,
+                Bio = artist.Bio,
+                DayOfBirth = artist.DayOfBirth,
+                Email = artist.Email,
+                PhoneNumber = artist.PhoneNumber,
+
             };
         }
 

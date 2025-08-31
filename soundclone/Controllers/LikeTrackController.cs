@@ -1,4 +1,5 @@
 ﻿using Data.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Services.LikeTrack;
@@ -16,6 +17,8 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("isLiked")]
+
+
         public async Task<ActionResult<bool>> IsTrackLiked([FromBody] LikeTrackInput input)
         {
             try
@@ -30,6 +33,8 @@ namespace soundclone.Controllers
         }
 
         [HttpPut("toggleStatus")]
+        [Authorize(Roles = "5")]
+
         public async Task<ActionResult<bool>> ToggleUserLikeTrackStatus([FromBody] LikeTrackInput input)
         {
             try

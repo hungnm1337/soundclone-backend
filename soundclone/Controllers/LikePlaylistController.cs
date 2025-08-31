@@ -18,60 +18,33 @@ namespace soundclone.Controllers
             _likePlaylistService = likePlaylistService;
         }
 
-        [HttpGet("like-playlist/{Userid:int}")]
-        [Authorize(Roles = "5")]
-        public async Task<ActionResult<IEnumerable<LikePlaylistDTO>>> GetLikePlaylistOfUser(int Userid)
+        [HttpPost("isLiked")]
+
+        public async Task<ActionResult<bool>> IsTrackLiked([FromBody] LikePlaylistInput input)
         {
             try
             {
-                var like_playlists = await _likePlaylistService.GetLikePlaylistOfUser(Userid);
-                if (like_playlists == null)
-                {
-                    return NotFound();
-                }
-                return Ok(like_playlists);
+                return await _likePlaylistService.IsLikedPlaylist(input.PlaylistId, input.UserId);
+
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
+                return BadRequest(ex.Message);
             }
         }
 
-        [HttpPost("like-playlist")]
+        [HttpPut("toggleStatus")]
         [Authorize(Roles = "5")]
-        public async Task<IActionResult> LikePlaylist([FromBody] LikePlaylistDTO model)
-        {
-            try
-            {
-                bool resultOfCreate = await _likePlaylistService.LikePlaylist(model);
-                if (resultOfCreate)
-                {
-                    return Ok();
-                }
-                return BadRequest();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500);
-            }
-        }
 
-        [HttpPost("unlike-playlist/{likePlaylistId:int}")]
-        [Authorize(Roles = "5")]
-        public async Task<IActionResult> UnlikePlaylist(int likePlaylistId)
+        public async Task<ActionResult<bool>> ToggleUserLikePlaylistStatus([FromBody] LikePlaylistInput input)
         {
             try
             {
-                bool resultOfUnlike = await _likePlaylistService.UnlikePlaylist(likePlaylistId);
-                if (resultOfUnlike)
-                {
-                    return Ok();
-                }
-                return BadRequest();
+                return await _likePlaylistService.ToggleUserLikePlaylistStatus(input.PlaylistId, input.UserId);
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
+                return BadRequest(ex.Message);
             }
         }
 

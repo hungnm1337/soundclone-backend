@@ -27,5 +27,12 @@ namespace Data.DTOs
 
         public int FollowerQuantity {  get; set; }
 
+        public string Bio {  get; set; }
+
+        public string Email { get; set; } = null!;
+
+        public DateOnly DayOfBirth { get; set; }
+
+        public string PhoneNumber { get; set; } = null!;
     }
 }
