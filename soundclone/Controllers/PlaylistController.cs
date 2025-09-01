@@ -146,5 +146,19 @@ namespace soundclone.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("remove-track")]
+        [Authorize(Roles = "5")]
+        public async Task<ActionResult<bool>> RemoveTrackOfPlaylist([FromBody] RemoveTrackDTO model)
+        {
+            try
+            {
+                return await _playlistService.RemoveTrackOfPlaylist(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

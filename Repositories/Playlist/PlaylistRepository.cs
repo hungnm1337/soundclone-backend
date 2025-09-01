@@ -183,7 +183,25 @@ namespace Repositories.Playlist
             return playlists;
         }
 
-        
+        public async Task<bool> RemoveTrackOfPlaylist(RemoveTrackDTO model)
+        {
+            var isAuthorOfPlaylist = await _soundcloneContext.Playlists.FindAsync(model.PlaylistId);
+            if (isAuthorOfPlaylist == null || isAuthorOfPlaylist.MakeBy != model.UserId)
+            {
+                return false;
+            }
+            var trackOfPlaylist = await _soundcloneContext.PlaylistTracks.FirstOrDefaultAsync(x => x.TrackId == model.TrackId && x.PlaylistId == model.PlaylistId);
+
+            if (trackOfPlaylist != null)
+            {
+                _soundcloneContext.PlaylistTracks.Remove(trackOfPlaylist);
+                await _soundcloneContext.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
+
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)
         {
             try

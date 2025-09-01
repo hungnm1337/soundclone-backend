@@ -26,6 +26,8 @@ namespace Services.Playlist
 
         Task<bool> DeletePlaylist(DeletePlaylistDTO model);
 
+        Task<bool> RemoveTrackOfPlaylist(RemoveTrackDTO model);
+
 
     }
 }

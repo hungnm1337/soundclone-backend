@@ -23,6 +23,8 @@ namespace Repositories.Playlist
 
         Task<bool> DeletePlaylist(DeletePlaylistDTO model);
 
+        Task<bool> RemoveTrackOfPlaylist(RemoveTrackDTO model);
+
         Task<PlayListDetailDTO> GetPlayListDetail(int playlistId);
     }
 }

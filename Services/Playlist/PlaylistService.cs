@@ -37,6 +37,8 @@ namespace Services.Playlist
             return await _playlistRepository.DeletePlaylist(model);
         }
 
+
+
         public async Task<IEnumerable<Data.Models.Playlist>> GetPlaylistByUserId(int userId)
         {
             return await _playlistRepository.GetPlaylistByUserId(userId);
@@ -50,6 +52,11 @@ namespace Services.Playlist
         public async Task<IEnumerable<PlaylistMenuDTO>> GetPlaylistMenu(int userId)
         {
             return await _playlistRepository.GetPlaylistMenu(userId);
+        }
+
+        public async Task<bool> RemoveTrackOfPlaylist(RemoveTrackDTO model)
+        {
+            return await _playlistRepository.RemoveTrackOfPlaylist(model);
         }
 
         public async Task<UpdatePlaylistDTO> UpdatePlaylist(UpdatePlaylistDTO playlist)

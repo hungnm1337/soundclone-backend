@@ -48,6 +48,15 @@ namespace Data.DTOs
         public int PlaylistId { get; set; }
     }
 
+    public class RemoveTrackDTO
+    {
+        public int UserId { get; set; }
+
+        public int PlaylistId { get; set; }
+
+        public int TrackId {  get; set; }
+    }
+
     public class GetPlaylistDTO
     {
         public int PlaylistId { get; set; }
