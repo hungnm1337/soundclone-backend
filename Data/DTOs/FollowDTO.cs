@@ -8,7 +8,7 @@ namespace Data.DTOs
 {
     public class FollowDTO
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public int ArtistId { get; set; }
 
