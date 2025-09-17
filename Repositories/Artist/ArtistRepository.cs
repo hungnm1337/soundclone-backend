@@ -42,17 +42,25 @@ namespace Repositories.Artist
 
         public async Task<IEnumerable<ArtistDTO>> GetTop5Artist()
         {
-            var artists = await (from user  in _soundcloneContext.Users
-                                 where user.Status.Equals("ACTIVE")
-                                 orderby new Guid()
-                                 select new ArtistDTO
-                                 {
-                                     Name = user.Name,
-                                     ProfilePictureUrl = user.ProfilePictureUrl,
-                                     UserId = user.UserId
-                                 }
-                                 ).Take( 5 ).ToListAsync();
+            var ids = await _soundcloneContext.Users
+                .Where(u => u.Status == "ACTIVE")
+                .Select(u => u.UserId)
+                .ToListAsync();
+
+            var random = new Random();
+            var randomIds = ids.OrderBy(x => random.Next()).Take(5).ToList();
+
+            var artists = await _soundcloneContext.Users
+                .Where(u => randomIds.Contains(u.UserId))
+                .Select(u => new ArtistDTO
+                {
+                    Name = u.Name,
+                    ProfilePictureUrl = u.ProfilePictureUrl,
+                    UserId = u.UserId
+                }).ToListAsync();
+
             return artists;
         }
+
     }
 }

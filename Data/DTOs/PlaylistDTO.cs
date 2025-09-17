@@ -99,6 +99,7 @@ namespace Data.DTOs
 
         public string Title { get; set; }
 
+        public int NumTrack {  get; set; }
         public string? PicturePlaylistUrl { get; set; }
         public string ArtistName { get; set; }
     }

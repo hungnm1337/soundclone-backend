@@ -146,7 +146,7 @@ namespace Repositories.Track
                       Artist = artist != null ? artist.Name : "No One",
                       ImageUrl = track.CoverArtUrl,
                       View = track.PlayCount,
-                      Year = track.UploadDate.Year
+                      Year = track.UploadDate.Date.ToString("yyyy MMM dd")
                   }
                 ).Take(10).ToListAsync();
 
@@ -175,7 +175,7 @@ namespace Repositories.Track
                       Artist = artist != null ? artist.Name : "No One",
                       ImageUrl = track.CoverArtUrl,
                       View = track.PlayCount,
-                      Year = track.UploadDate.Year
+                      Year = track.UploadDate.Date.ToString("yyyy MMM dd")
                   }
                 ).Take(10).ToListAsync();
 

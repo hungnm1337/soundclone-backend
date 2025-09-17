@@ -37,7 +37,7 @@ namespace Data.DTOs
 
         public string Artist { get; set; }
 
-        public int Year { get; set; }
+        public string Year { get; set; }
 
         public int View { get; set; }
 

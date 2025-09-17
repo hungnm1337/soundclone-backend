@@ -82,12 +82,21 @@ namespace Repositories.ListData
             var users = await _soundcloneContext.Users
                 .Where(u => userIds.Contains(u.UserId))
                 .ToDictionaryAsync(u => u.UserId, u => u.Name);
+            
+            // Đếm số lượng bài hát cho mỗi playlist
+            var playlistIds = playlists.Select(p => p.PlaylistId).ToList();
+            var trackCounts = await _soundcloneContext.PlaylistTracks
+                .Where(pt => playlistIds.Contains(pt.PlaylistId))
+                .GroupBy(pt => pt.PlaylistId)
+                .ToDictionaryAsync(g => g.Key, g => g.Count());
+            
             var dtos = playlists.Select(p => new ListPlaylistDTO
             {
                 PicturePlaylistUrl = p.PicturePlaylistUrl,
                 Title = p.Title,
                 PlaylistId = p.PlaylistId,
                 ArtistName = users.TryGetValue(p.MakeBy, out var name) ? name : null,
+                NumTrack = trackCounts.TryGetValue(p.PlaylistId, out var count) ? count : 0,
             }).ToList();
             return dtos;
         }
@@ -160,12 +169,21 @@ namespace Repositories.ListData
             var users = await _soundcloneContext.Users
                 .Where(u => userIds.Contains(u.UserId))
                 .ToDictionaryAsync(u => u.UserId, u => u.Name);
+            
+            // Đếm số lượng bài hát cho mỗi playlist
+            var playlistIds = playlists.Select(p => p.PlaylistId).ToList();
+            var trackCounts = await _soundcloneContext.PlaylistTracks
+                .Where(pt => playlistIds.Contains(pt.PlaylistId))
+                .GroupBy(pt => pt.PlaylistId)
+                .ToDictionaryAsync(g => g.Key, g => g.Count());
+            
             var dtos = playlists.Select(t => new ListPlaylistDTO
             {
                 ArtistName = users.TryGetValue(t.MakeBy, out var name) ? name : null,
                 PicturePlaylistUrl = t.PicturePlaylistUrl,
                 Title = t.Title,
-                PlaylistId = t.PlaylistId
+                PlaylistId = t.PlaylistId,
+                NumTrack = trackCounts.TryGetValue(t.PlaylistId, out var count) ? count : 0,
             }).ToList();
             return dtos;
 
