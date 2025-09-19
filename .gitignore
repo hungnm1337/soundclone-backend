@@ -358,3 +358,6 @@ FodyWeavers.xsd
 # Custom: Ignore appsettings.json files
 appsettings.json
 appsettings.*.json
+soundclone/.vs/soundclone/v17/DocumentLayout.backup.json
+soundclone/.vs/soundclone/v17/DocumentLayout.json
+soundclone/.vs/soundclone/v17/.suo
