@@ -87,7 +87,7 @@ namespace Repositories.Report
                 var report = await _soundcloneContext.SystemReports.FindAsync(id);
                 var result = new SystemReportDetailDTO()
                 {
-                    ReplyContent = report.Content,
+                    ReplyContent = report.ReplyContent,
                     ReplyDate = report.ReplyDate,
                     ReportDate = report.ReportDate,
                     Content = report.Content,

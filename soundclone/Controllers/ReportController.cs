@@ -33,7 +33,7 @@ namespace soundclone.Controllers
         }
 
         [HttpGet("report/{id:int}")]
-        [Authorize(Roles = "6")]
+        [Authorize]
         public async Task<ActionResult<SystemReportDetailDTO>> GetSystemReportById(int id)
         {
             try

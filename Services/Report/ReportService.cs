@@ -33,7 +33,7 @@ namespace Services.Report
 
         public async Task<SystemReportDetailDTO> GetSystemReportById(int id)
         {
-            return await GetSystemReportById(id);
+            return await _reportRepository.GetSystemReportById(id);
         }
 
         public async Task<bool> ReplySystemReport(ReplySystemReportDTO reportSystemDTO)
