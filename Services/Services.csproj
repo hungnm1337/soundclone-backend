@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Admin\NewFolder\**" />
+    <EmbeddedResource Remove="Admin\NewFolder\**" />
+    <None Remove="Admin\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="4.0.4.2" />
     <PackageReference Include="CloudinaryDotNet" Version="1.27.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />

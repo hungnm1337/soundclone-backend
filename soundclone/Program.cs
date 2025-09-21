@@ -31,6 +31,8 @@ using Repositories.Report;
 using Services.Report;
 using Repositories.Admin.Account;
 using Services.Admin.Account;
+using Repositories.Admin.Analysis;
+using Services.Admin.Analysis;
 
 namespace soundclone
 {
@@ -80,6 +82,8 @@ namespace soundclone
             builder.Services.AddScoped<IReportService, ReportService>();
             builder.Services.AddScoped<IAccountRepository, AccountRepository>();
             builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IAnalysisRepository, AnalysisRepository>();
+            builder.Services.AddScoped<IAnalysisService, AnalysisService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
