@@ -34,7 +34,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPost("create")]
-        [Authorize(Roles = "5")]
+        [Authorize]
         public async Task<ActionResult<CreateNewTrack>> CreateTrack([FromBody] CreateNewTrack trackDto)
         {
             var created = await _trackService.CreateTrackAsync(trackDto);
@@ -42,7 +42,7 @@ namespace soundclone.Controllers
         }
 
         [HttpPut("update-track")]
-        [Authorize(Roles = "5")]
+        [Authorize]
         public async Task<IActionResult> UpdateTrack([FromBody] TrackDTO trackDto)
         {
             var updated = await _trackService.UpdateTrackAsync(trackDto);
@@ -51,7 +51,7 @@ namespace soundclone.Controllers
         }
 
         [HttpDelete("delete-track/{id}")]
-        [Authorize(Roles = "5")]
+        [Authorize]
         public async Task<IActionResult> DeleteTrack(int id)
         {
             var deleted = await _trackService.DeleteTrackAsync(id);
@@ -77,6 +77,20 @@ namespace soundclone.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500,ex.Message);
+            }
+        }
+
+        [HttpGet("top-albums")]
+        public async Task<IActionResult> GetTop5Album()
+        {
+            try
+            {
+                var albums = await _trackService.GetTop5Albums();
+                return Ok(albums);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 

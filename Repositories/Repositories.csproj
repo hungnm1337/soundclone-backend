@@ -26,4 +26,10 @@
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Admin\Account\" />
+    <Folder Include="Admin\Analysis\" />
+    <Folder Include="Admin\ServiceSystem\" />
+  </ItemGroup>
+
 </Project>

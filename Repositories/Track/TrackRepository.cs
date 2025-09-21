@@ -186,5 +186,34 @@ namespace Repositories.Track
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<IEnumerable<Album>> GetTop5Albums()
+        {
+            try
+            {
+                var listAlbum = await(
+                  from track in _context.Tracks
+                  join user in _context.Users on track.UpdateBy equals user.UserId into userGroup
+                  from artist in userGroup.DefaultIfEmpty()
+                  where track.IsPublic
+                  orderby track.PlayCount descending
+                  select new Album
+                  {
+                      Id = track.TrackId,
+                      Title = track.Title,
+                      Artist = artist != null ? artist.Name : "No One",
+                      ImageUrl = track.CoverArtUrl,
+                      View = track.PlayCount,
+                      Year = track.UploadDate.Date.ToString("yyyy MMM dd")
+                  }
+                ).Take(5).ToListAsync();
+
+                return listAlbum;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

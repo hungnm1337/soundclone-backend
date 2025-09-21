@@ -3,13 +3,103 @@
   "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\report\\reportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\admin\\account\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\dtos\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\accountmanagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\accountmanagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\roletestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\roletestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\admin\\account\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\admin\\account\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\admin\\account\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\track\\trackrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\track\\trackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\track\\itrackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\track\\itrackrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\report\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\artistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\artistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\jwtauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\jwtauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\login.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:login.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\soundclone.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:soundclone.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\playlist\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\report\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8998645-0E62-4D3A-9D12-63F9AF85B2A8}|..\\Services\\Services.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\services\\report\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\playlisttrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\liketrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\models\\likeplaylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F03EB8-4B71-44AB-A96C-910A4DB5FA04}|..\\Repositories\\Repositories.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\repositories\\report\\reportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +107,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{F32C81DD-2E3E-4A75-9705-119FAB557B17}|..\\Data\\Data.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\data\\dtos\\reportsystemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|c:\\users\\user\\onedrive\\desktop\\soundclone_ver2.0\\soundclone-backend\\soundclone\\controllers\\roletestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{044EDC96-B281-48AB-AB11-91D05032B51E}|soundclone.csproj|solutionrelative:controllers\\roletestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +116,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 299,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\AccountDTO.cs",
+              "RelativeDocumentMoniker": "..\\Data\\DTOs\\AccountDTO.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\AccountDTO.cs",
+              "RelativeToolTip": "..\\Data\\DTOs\\AccountDTO.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAA1wA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:03:12.341Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
@@ -46,57 +145,202 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Report\\ReportService.cs",
-              "RelativeDocumentMoniker": "..\\Services\\Report\\ReportService.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Report\\ReportService.cs",
-              "RelativeToolTip": "..\\Services\\Report\\ReportService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AccountManageController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\AccountManageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountManageController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\AccountManageController.cs",
+              "RelativeToolTip": "Controllers\\AccountManageController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T02:09:40.991Z",
+              "WhenOpened": "2025-09-21T01:53:58.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ReportSystemDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\ReportSystemDTO.cs",
-              "RelativeDocumentMoniker": "..\\Data\\DTOs\\ReportSystemDTO.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\ReportSystemDTO.cs",
-              "RelativeToolTip": "..\\Data\\DTOs\\ReportSystemDTO.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wCYAAAAiAAAAAAAAAA==",
+              "Title": "RoleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\RoleDTO.cs",
+              "RelativeDocumentMoniker": "..\\Data\\DTOs\\RoleDTO.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\RoleDTO.cs",
+              "RelativeToolTip": "..\\Data\\DTOs\\RoleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T00:55:03.451Z"
+              "WhenOpened": "2025-09-21T02:27:24.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "RoleTestController.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\RoleTestController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleTestController.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\RoleTestController.cs",
               "RelativeToolTip": "Controllers\\RoleTestController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T00:50:30.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReportRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Report\\ReportRepository.cs",
-              "RelativeDocumentMoniker": "..\\Repositories\\Report\\ReportRepository.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Report\\ReportRepository.cs",
-              "RelativeToolTip": "..\\Repositories\\Report\\ReportRepository.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwFkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T00:46:54.331Z",
+              "WhenOpened": "2025-09-19T00:50:30.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Admin\\Account\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Admin\\Account\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Admin\\Account\\AccountRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Admin\\Account\\AccountRepository.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAwJAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:03:01.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Admin\\Account\\AccountService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Admin\\Account\\AccountService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Admin\\Account\\AccountService.cs",
+              "RelativeToolTip": "..\\Services\\Admin\\Account\\AccountService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwHoAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:09:59.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Admin\\Account\\IAccountService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Admin\\Account\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Admin\\Account\\IAccountService.cs",
+              "RelativeToolTip": "..\\Services\\Admin\\Account\\IAccountService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwC0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:10:03.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Admin\\Account\\IAccountRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Admin\\Account\\IAccountRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Admin\\Account\\IAccountRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Admin\\Account\\IAccountRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:03:03.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\Role.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Role.cs",
+              "RelativeToolTip": "..\\Data\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:26:54.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TrackRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Track\\TrackRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Track\\TrackRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Track\\TrackRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Track\\TrackRepository.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAuwMYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:27:37.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAQwFEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:54:54.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TrackService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Track\\TrackService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Track\\TrackService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Track\\TrackService.cs",
+              "RelativeToolTip": "..\\Services\\Track\\TrackService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswDkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:24:34.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ITrackService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Track\\ITrackService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Track\\ITrackService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Track\\ITrackService.cs",
+              "RelativeToolTip": "..\\Services\\Track\\ITrackService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:21:23.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITrackRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Track\\ITrackRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Track\\ITrackRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Track\\ITrackRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Track\\ITrackRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:20:02.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TrackController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\TrackController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrackController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\TrackController.cs",
+              "RelativeToolTip": "Controllers\\TrackController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAuwFIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:38:22.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ArtistController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\ArtistController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ArtistController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\ArtistController.cs",
+              "RelativeToolTip": "Controllers\\ArtistController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:38:12.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "IReportService.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Report\\IReportService.cs",
               "RelativeDocumentMoniker": "..\\Services\\Report\\IReportService.cs",
@@ -109,7 +353,176 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\User.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\User.cs",
+              "RelativeToolTip": "..\\Data\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:45:00.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "JWTAuthAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\JWTAuthAttribute.cs",
+              "RelativeDocumentMoniker": "Controllers\\JWTAuthAttribute.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\JWTAuthAttribute.cs",
+              "RelativeToolTip": "Controllers\\JWTAuthAttribute.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:29:26.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PlaylistController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\PlaylistController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlaylistController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\PlaylistController.cs",
+              "RelativeToolTip": "Controllers\\PlaylistController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:29:31.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "login.http",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\login.http",
+              "RelativeDocumentMoniker": "login.http",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\login.http",
+              "RelativeToolTip": "login.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-19T03:31:41.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "soundclone.http",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\soundclone.http",
+              "RelativeDocumentMoniker": "soundclone.http",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\soundclone.http",
+              "RelativeToolTip": "soundclone.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-19T03:31:56.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlaylistRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Playlist\\PlaylistRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Playlist\\PlaylistRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Playlist\\PlaylistRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Playlist\\PlaylistRepository.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:52.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PlaylistTrack.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\PlaylistTrack.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\PlaylistTrack.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\PlaylistTrack.cs",
+              "RelativeToolTip": "..\\Data\\Models\\PlaylistTrack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:29.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Playlist.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Playlist.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\Playlist.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Playlist.cs",
+              "RelativeToolTip": "..\\Data\\Models\\Playlist.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:20.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\Notification.cs",
+              "RelativeToolTip": "..\\Data\\Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:13.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LikeTrack.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\LikeTrack.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\LikeTrack.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\LikeTrack.cs",
+              "RelativeToolTip": "..\\Data\\Models\\LikeTrack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:11.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LikePlaylist.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\LikePlaylist.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\LikePlaylist.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\Models\\LikePlaylist.cs",
+              "RelativeToolTip": "..\\Data\\Models\\LikePlaylist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:28:09.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Report\\ReportService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\Report\\ReportService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Services\\Report\\ReportService.cs",
+              "RelativeToolTip": "..\\Services\\Report\\ReportService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T02:09:40.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ReportSystemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\ReportSystemDTO.cs",
+              "RelativeDocumentMoniker": "..\\Data\\DTOs\\ReportSystemDTO.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Data\\DTOs\\ReportSystemDTO.cs",
+              "RelativeToolTip": "..\\Data\\DTOs\\ReportSystemDTO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wCYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T00:55:03.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Report\\ReportRepository.cs",
+              "RelativeDocumentMoniker": "..\\Repositories\\Report\\ReportRepository.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\Repositories\\Report\\ReportRepository.cs",
+              "RelativeToolTip": "..\\Repositories\\Report\\ReportRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwFkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T00:46:54.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "ReportController.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\SoundClone_Ver2.0\\soundclone-backend\\soundclone\\Controllers\\ReportController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
@@ -117,8 +530,7 @@
               "RelativeToolTip": "Controllers\\ReportController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T00:42:30.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T00:42:30.529Z"
             }
           ]
         }
